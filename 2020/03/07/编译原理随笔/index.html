@@ -1,0 +1,941 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="尽人事，听天命">
+  <meta name="author" content="SZL">
+  <meta name="keywords" content="">
+  <title>编译原理随笔 - 我 走路带风</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>龙のブログ</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                主页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于我
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/top2.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      SZL
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-03-07 02:48" pubdate>
+        March 7, 2020 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      12
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">编译原理随笔</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：8 months ago
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h2 id="自动机理论"><a href="#自动机理论" class="headerlink" title="自动机理论"></a>自动机理论</h2><h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><blockquote>
+<p>[TOC]</p>
+</blockquote>
+<h2 id="第一章-自动机"><a href="#第一章-自动机" class="headerlink" title="第一章    自动机"></a>第一章    自动机</h2><h4 id="1、为什么研究自动机理论"><a href="#1、为什么研究自动机理论" class="headerlink" title="1、为什么研究自动机理论"></a>1、为什么研究自动机理论</h4><ol>
+<li>有穷自动机简介</li>
+<li>结构表示法<ul>
+<li>两种重要记号<ul>
+<li>文法</li>
+<li>正则表达式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>自动机与复杂性</li>
+</ol>
+<h4 id="2、形式化证明简介"><a href="#2、形式化证明简介" class="headerlink" title="2、形式化证明简介"></a>2、形式化证明简介</h4><ol>
+<li>演绎证明</li>
+<li>求助于定义</li>
+<li>其他定理形式</li>
+<li>表面上不是“如果-则”命题的定理</li>
+</ol>
+<h4 id="3、其他证明形式"><a href="#3、其他证明形式" class="headerlink" title="3、其他证明形式"></a>3、其他证明形式</h4><ol>
+<li>证明集合等价性</li>
+<li>逆否命题</li>
+<li>反证法</li>
+<li>反例</li>
+</ol>
+<h4 id="4、归纳证明"><a href="#4、归纳证明" class="headerlink" title="4、归纳证明"></a>4、归纳证明</h4><ol>
+<li>整数上归纳法</li>
+<li>一般形式整数归纳法</li>
+<li>结构归纳法</li>
+<li>互归纳法</li>
+</ol>
+<p>5、自动机理论中心概念</p>
+<ol>
+<li>字母表<ul>
+<li>是符号的有穷非空集合，用∑表示</li>
+</ul>
+</li>
+<li>串<ul>
+<li>从字母表中选择的符号的有穷序列</li>
+<li>空串ε</li>
+<li>串的长度–符号位数</li>
+<li>字母表的幂<ul>
+<li>∑^k^表示在字母表∑上的长度为k的串</li>
+<li>∑^*^表示在字母表∑上的所有串</li>
+<li>∑^+^表示在字母表∑上的非空串集合</li>
+</ul>
+</li>
+<li>串的连接</li>
+</ul>
+</li>
+<li>语言<ul>
+<li>从∑^*^上选出的串的某个集合L</li>
+<li>集合表示法可以作为定义语言的方式</li>
+</ul>
+</li>
+<li>问题<ul>
+<li>给定串w，判断是否属于语言L</li>
+</ul>
+</li>
+</ol>
+<h4 id="6、小结"><a href="#6、小结" class="headerlink" title="6、小结"></a>6、小结</h4><ul>
+<li></li>
+</ul>
+<hr>
+<h2 id="第二章-有穷自动机"><a href="#第二章-有穷自动机" class="headerlink" title="第二章    有穷自动机"></a>第二章    有穷自动机</h2><h4 id="1、有穷自动机的非形式化描述"><a href="#1、有穷自动机的非形式化描述" class="headerlink" title="1、有穷自动机的非形式化描述"></a>1、有穷自动机的非形式化描述</h4><ol>
+<li>基本规则</li>
+<li>协议</li>
+<li>允许自动机忽略动作<ul>
+<li>两类必须忽略动作<ul>
+<li>与各方无关的动作</li>
+<li>导致自动机死亡的动作</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>整个系统成为一个自动机</li>
+<li>用乘积自动机验证协议</li>
+</ol>
+<h4 id="2、确定型有穷自动机"><a href="#2、确定型有穷自动机" class="headerlink" title="2、确定型有穷自动机"></a>2、确定型有穷自动机</h4><ol>
+<li>确定型有穷自动机的形式化定义<ul>
+<li>一个有穷的状态集合Q</li>
+<li>一个有穷的输入符号集合∑</li>
+<li>一个转移函数δ</li>
+<li>一个初始状态q<del>0</del>，Q中之一</li>
+<li>一个接收状态集合F，Q的子集</li>
+<li>五元组定义为（Q，∑，δ，q<del>0</del>，F）</li>
+</ul>
+</li>
+<li>DFA如何处理串</li>
+<li>DFA的简化记号<ul>
+<li>转移图</li>
+<li>转移表</li>
+</ul>
+</li>
+<li>把转移函数扩展到串<ul>
+<li>使用扩展转移函数</li>
+</ul>
+</li>
+<li>DFA的语言<ul>
+<li>让初始状态q<del>0</del>通向接受状态之一的串w的集合</li>
+</ul>
+</li>
+</ol>
+<h4 id="3、非确定的有穷自动机"><a href="#3、非确定的有穷自动机" class="headerlink" title="3、非确定的有穷自动机"></a>3、非确定的有穷自动机</h4><ol>
+<li>其非形式化观点<ul>
+<li>区别在于NFA的转移函数可能返回不止一个状态</li>
+<li>死亡情况可忽略</li>
+<li>NFA转移表每一项都是一个状态的集合或者空集合</li>
+</ul>
+</li>
+<li>定义<ul>
+<li>一个有穷的状态集合Q</li>
+<li>一个有穷的输入符号集合∑</li>
+<li>一个转移函数δ</li>
+<li>一个初始状态q<del>0</del>，Q中之一</li>
+<li>一个接收状态集合F，Q的子集</li>
+<li>五元组定义为（Q，∑，δ，q<del>0</del>，F）</li>
+</ul>
+</li>
+<li>扩展转移函数</li>
+<li>NFA的语言<ul>
+<li>让初始状态q<del>0</del>至少有一条路径通向接受状态之一的串w的集合</li>
+</ul>
+</li>
+<li>确定型与非确定型有穷自动机的等价性<ul>
+<li>子集构造：说明如何形式化用一个自动机的状态和转移来描述另一个自动机</li>
+</ul>
+</li>
+<li>子集构造的坏情况</li>
+</ol>
+<h4 id="4、应用：文本搜索"><a href="#4、应用：文本搜索" class="headerlink" title="4、应用：文本搜索"></a>4、应用：文本搜索</h4><ol>
+<li>在文本中查找串  </li>
+<li>文本搜索的非确定型有穷自动机</li>
+<li>识别关键字集合的DFA</li>
+</ol>
+<h4 id="5、带ε转移的有穷自动机"><a href="#5、带ε转移的有穷自动机" class="headerlink" title="5、带ε转移的有穷自动机"></a>5、带ε转移的有穷自动机</h4><ol>
+<li>ε转移的用途</li>
+<li>ε-NFA的形式化定义</li>
+<li>ε闭包</li>
+<li>ε-NFA的扩展转移和语言</li>
+<li>消除ε转移</li>
+</ol>
+<h4 id="6、小结-1"><a href="#6、小结-1" class="headerlink" title="6、小结"></a>6、小结</h4><hr>
+<h2 id="第三章-词法分析"><a href="#第三章-词法分析" class="headerlink" title="第三章    词法分析"></a>第三章    词法分析</h2><h4 id="1、正则表达式（RE）"><a href="#1、正则表达式（RE）" class="headerlink" title="1、正则表达式（RE）"></a>1、正则表达式（RE）</h4><ul>
+<li>是一种用来描述正则语言的更紧凑的表达方式</li>
+<li>每个正则表达式r定义一个语言L（r）</li>
+<li>递归定义：<ul>
+<li>空串ε是一个RE，L（ε）= { ε }；</li>
+<li>如果a属于∑，则a是一个RE，L（a）= { a }；</li>
+<li>假设r和s都是RE则 <ul>
+<li>r | s是一个RE，L（r | s）=两语言并集</li>
+<li>rs是一个RE，两语言乘积</li>
+<li>r^*^是一个RE，语言的克林闭包</li>
+<li>（r）是一个RE，原语言</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>正则语言：可以用RE定义的语言，也叫正则集合</li>
+<li>正则文法与正则表达式的等价</li>
+</ul>
+<h4 id="2、正则定义"><a href="#2、正则定义" class="headerlink" title="2、正则定义"></a>2、正则定义</h4><ul>
+<li>如下形式<ul>
+<li>d<del>i</del>   代表某个RE  r<del>i</del></li>
+<li>每个   d<del>i</del>   都是一个新符号</li>
+<li>每个   r<del>i</del>   是   ∑   并上   {d<del>i</del>}   上的正则表达式</li>
+</ul>
+</li>
+</ul>
+<h4 id="3、有穷自动机"><a href="#3、有穷自动机" class="headerlink" title="3、有穷自动机"></a>3、有穷自动机</h4><ul>
+<li>最长子串匹配原则</li>
+<li>DFA<ul>
+<li>（S，∑，δ，s<del>0</del>，F）</li>
+<li>δ：S×∑→S</li>
+</ul>
+</li>
+<li>NFA<ul>
+<li>（S，∑，δ，s0，F）</li>
+<li>δ：S×∑→2^S^</li>
+</ul>
+</li>
+<li>带有ε-边的NFA<ul>
+<li>（S，∑，δ，s0，F）</li>
+<li>δ：S×（  ∑并{ε}  ）→2^S^</li>
+</ul>
+</li>
+<li>两种自动机的等价性</li>
+<li>带不带ε-边的等价性</li>
+</ul>
+<h4 id="4、从正则表达式到有穷自动机"><a href="#4、从正则表达式到有穷自动机" class="headerlink" title="4、从正则表达式到有穷自动机"></a>4、从正则表达式到有穷自动机</h4><ul>
+<li>根据RE构造NFA<ul>
+<li>并联、串联、克林闭包</li>
+</ul>
+</li>
+</ul>
+<h4 id="5、从NFA到DFA的转换"><a href="#5、从NFA到DFA的转换" class="headerlink" title="5、从NFA到DFA的转换"></a>5、从NFA到DFA的转换</h4><ul>
+<li>NFA    转换表    DFA</li>
+<li>子集构造法</li>
+</ul>
+<h4 id="6、识别单词的DFA"><a href="#6、识别单词的DFA" class="headerlink" title="6、识别单词的DFA"></a>6、识别单词的DFA</h4><ul>
+<li>标识符</li>
+<li>无符号数</li>
+<li>注释</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%88%91%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">我的学习笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%88%91%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">我的学习笔记</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/03/14/to%20install/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">ToInstall</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/03/07/%E8%83%8C%E5%8C%85/">
+                        <span class="hidden-mobile">不考虑价值的简单背包问题</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "eiB322SWcVUsFk4lolBUdDNu-gzGzoHsz",
+          app_key: "Jd6DKjFNo9aXSfVmRllU2G66",
+          placeholder: "Say something plz...",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer>
+  (function () {
+    // 查询存储的记录
+    function getRecord(Counter, target) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {target, time: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    }
+
+    // 发起自增请求
+    function increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    }
+
+    // 构建自增请求体
+    function buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "time": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    }
+
+    // 校验是否为有效的 UV
+    function validUV() {
+      var key = 'LeanCloud_UV_Flag';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    }
+
+    function addCount(Counter) {
+      var enableIncr = 'true' === 'true' && window.location.hostname !== 'localhost';
+      var getterArr = [];
+      var incrArr = [];
+
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#leancloud-site-pv-container');
+      if (pvCtn || enableIncr) {
+        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
+          incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-pv');
+          if (ele) {
+            ele.innerText = record.time + 1;
+            if (pvCtn) {
+              pvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#leancloud-site-uv-container');
+      if (uvCtn || enableIncr) {
+        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
+          var vuv = validUV();
+          vuv && incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-uv');
+          if (ele) {
+            ele.innerText = record.time + (vuv ? 1 : 0);
+            if (uvCtn) {
+              uvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 如果是文章，请求文章的浏览数，并自增
+      if ('true' === 'true') {
+        var viewCtn = document.querySelector('#leancloud-post-views-container');
+        if (viewCtn || enableIncr) {
+          var target = decodeURI('/2020/03/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E9%9A%8F%E7%AC%94/');
+          var viewGetter = getRecord(Counter, target).then((record) => {
+            incrArr.push(buildIncrement(record.objectId))
+            if (viewCtn) {
+              var ele = document.querySelector('#leancloud-post-views');
+              if (ele) {
+                ele.innerText = (record.time || 0) + 1;
+                viewCtn.style.display = 'inline';
+              }
+            }
+          });
+          getterArr.push(viewGetter);
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && increment(Counter, incrArr);
+        })
+      }
+    }
+
+    var app_id = 'eiB322SWcVUsFk4lolBUdDNu-gzGzoHsz'
+    var app_key = 'Jd6DKjFNo9aXSfVmRllU2G66'
+    var server_url = 'https://eib322sw.lc-cn-n1-shared.com'
+
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': app_id,
+            'X-LC-Key': app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+
+      addCount(Counter);
+    }
+
+    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(resp => resp.json())
+        .then(({api_server}) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "编译原理随笔&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

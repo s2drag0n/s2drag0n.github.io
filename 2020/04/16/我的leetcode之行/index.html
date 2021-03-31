@@ -1,0 +1,1040 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="尽人事，听天命">
+  <meta name="author" content="SZL">
+  <meta name="keywords" content="">
+  <title>我的leetcode之行 - 我 走路带风</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>龙のブログ</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                主页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于我
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/post/leetcode.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      SZL
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-04-16 00:57" pubdate>
+        April 16, 2020 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      23
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">我的leetcode之行</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：6 months ago
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h2 id="我的leetcode之行"><a href="#我的leetcode之行" class="headerlink" title="我的leetcode之行"></a>我的leetcode之行</h2><h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h3 id="8-字符串转整数"><a href="#8-字符串转整数" class="headerlink" title="8_字符串转整数"></a>8_字符串转整数</h3><div class="hljs"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding = =utf-8 -*-</span>
+<span class="hljs-comment"># @Time : 2020/4/7 11:14</span>
+<span class="hljs-comment"># @Author : 宋子龙</span>
+<span class="hljs-comment"># @File : 8_字符串转整数.py</span>
+<span class="hljs-comment"># @Software : PyCharm</span>
+<span class="hljs-comment"># 自动机思想</span>
+INT_MAX = <span class="hljs-number">2</span> ** <span class="hljs-number">31</span> - <span class="hljs-number">1</span>
+INT_MIN = - <span class="hljs-number">2</span> ** <span class="hljs-number">31</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Aut0m0t0n</span>:</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self)</span>:</span>
+        self.state = <span class="hljs-string">'start'</span>     <span class="hljs-comment"># 自动机状态参数</span>
+        self.sign = <span class="hljs-number">1</span>           <span class="hljs-comment"># 自动机有无符号参数</span>
+        self.ans = <span class="hljs-number">0</span>
+        self.table = &#123;
+            <span class="hljs-string">'start'</span>: [<span class="hljs-string">'start'</span>,<span class="hljs-string">'signed'</span>,<span class="hljs-string">'in_number'</span>,<span class="hljs-string">'end'</span>],
+            <span class="hljs-string">'signed'</span>: [<span class="hljs-string">'end'</span>,<span class="hljs-string">'end'</span>,<span class="hljs-string">'in_number'</span>,<span class="hljs-string">'end'</span>],
+            <span class="hljs-string">'in_number'</span>: [<span class="hljs-string">'end'</span>,<span class="hljs-string">'end'</span>,<span class="hljs-string">'in_number'</span>,<span class="hljs-string">'end'</span>],
+            <span class="hljs-string">'end'</span>: [<span class="hljs-string">'end'</span>,<span class="hljs-string">'end'</span>,<span class="hljs-string">'end'</span>,<span class="hljs-string">'end'</span>]
+        &#125;                         <span class="hljs-comment"># 自动机转移表</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_col</span><span class="hljs-params">(self, c)</span>:</span>           <span class="hljs-comment"># 判断字符类型</span>
+        <span class="hljs-keyword">if</span> c.isspace():            <span class="hljs-comment"># 空格返回0</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+        <span class="hljs-keyword">if</span> c == <span class="hljs-string">'+'</span> <span class="hljs-keyword">or</span> c == <span class="hljs-string">'-'</span>:     <span class="hljs-comment"># 正负号返回1</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>
+        <span class="hljs-keyword">if</span> c.isdigit():             <span class="hljs-comment"># 数字返回2</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>                    <span class="hljs-comment"># 其他返回3</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get</span><span class="hljs-params">(self, c)</span>:</span>                  <span class="hljs-comment"># 自动机转移函数</span>
+        self.state = self.table[self.state][self.get_col(c)]
+        <span class="hljs-comment"># 自动机转移</span>
+        <span class="hljs-keyword">if</span> self.state == <span class="hljs-string">'in_number'</span>:
+            self.ans = self.ans * <span class="hljs-number">10</span> + int(c)
+            self.ans = min(self.ans, INT_MAX) <span class="hljs-keyword">if</span> self.sign == <span class="hljs-number">1</span> \
+                <span class="hljs-keyword">else</span> min(self.ans, -INT_MIN)
+        <span class="hljs-keyword">elif</span> self.state == <span class="hljs-string">'signed'</span>:
+            self.sign = <span class="hljs-number">1</span> <span class="hljs-keyword">if</span> c == <span class="hljs-string">'+'</span> \
+                <span class="hljs-keyword">else</span> <span class="hljs-number">-1</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">myAtoi</span><span class="hljs-params">(self, str: str)</span> -&gt; int:</span>
+        automaton = Aut0m0t0n()
+        <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> str:
+            automaton.get(c)
+        <span class="hljs-keyword">return</span> automaton.sign * automaton.ans
+
+
+solution = Solution()
+
+print(solution.myAtoi(<span class="hljs-string">'-1'</span>))</code></pre></div>
+
+<h3 id="13-机器人运动范围"><a href="#13-机器人运动范围" class="headerlink" title="13_机器人运动范围"></a>13_机器人运动范围</h3><div class="hljs"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding = =utf-8 -*-</span>
+<span class="hljs-comment"># @Time : 2020/4/8 1:23</span>
+<span class="hljs-comment"># @Author : 宋子龙</span>
+<span class="hljs-comment"># @File : 13_机器人运动范围.py</span>
+<span class="hljs-comment"># @Software : PyCharm</span>
+<span class="hljs-comment"># 使用set和Queue进行广义搜索</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-comment"># def movingCount(self, m: int, n: int, k: int) -&gt; int:</span>
+    <span class="hljs-comment">#     s = 0</span>
+    <span class="hljs-comment">#     i = 0</span>
+    <span class="hljs-comment">#     while(i &lt; m):</span>
+    <span class="hljs-comment">#         j = 0</span>
+    <span class="hljs-comment">#         while(j &lt; n):</span>
+    <span class="hljs-comment">#             if self.plus(i) + self.plus(j) &lt;= k:</span>
+    <span class="hljs-comment">#                 s += 1</span>
+    <span class="hljs-comment">#             j += 1</span>
+    <span class="hljs-comment">#         i += 1</span>
+    <span class="hljs-comment">#     print(s)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">movingCount</span><span class="hljs-params">(self, m: int, n: int, k: int)</span> -&gt; int:</span>
+        <span class="hljs-keyword">from</span> queue <span class="hljs-keyword">import</span> Queue
+        q = Queue()
+        q.put((<span class="hljs-number">0</span>, <span class="hljs-number">0</span>))
+        s = set()
+        <span class="hljs-keyword">while</span> <span class="hljs-keyword">not</span> q.empty():
+            x, y = q.get()
+            <span class="hljs-keyword">if</span> (x, y) <span class="hljs-keyword">not</span> <span class="hljs-keyword">in</span> s <span class="hljs-keyword">and</span> <span class="hljs-number">0</span> &lt;= x &lt; m <span class="hljs-keyword">and</span> <span class="hljs-number">0</span> &lt;= y &lt; n <span class="hljs-keyword">and</span> self.digitsum(x) + self.digitsum(y) &lt;= k:
+                s.add((x, y))
+                <span class="hljs-keyword">for</span> nx, ny <span class="hljs-keyword">in</span> [(x + <span class="hljs-number">1</span>, y), (x, y + <span class="hljs-number">1</span>)]:
+                    q.put((nx, ny))
+        <span class="hljs-keyword">return</span> len(s)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">digitsum</span><span class="hljs-params">(self,x: int)</span>:</span>
+        p = <span class="hljs-number">0</span>
+        <span class="hljs-comment"># while x &gt;= 10:</span>
+        <span class="hljs-comment">#     p += x % 10</span>
+        <span class="hljs-comment">#     x = x / 10</span>
+        <span class="hljs-comment"># p += x</span>
+        <span class="hljs-keyword">while</span> x:
+            p += x % <span class="hljs-number">10</span>
+            x //= <span class="hljs-number">10</span>
+        <span class="hljs-keyword">return</span> p
+
+solution = Solution()
+solution.movingCount(<span class="hljs-number">16</span>,<span class="hljs-number">8</span>,<span class="hljs-number">4</span>)</code></pre></div>
+
+<h3 id="22-括号生成"><a href="#22-括号生成" class="headerlink" title="22_括号生成"></a>22_括号生成</h3><div class="hljs"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding = =utf-8 -*-</span>
+<span class="hljs-comment"># @Time : 2020/4/9 11:29</span>
+<span class="hljs-comment"># @Author : 宋子龙</span>
+<span class="hljs-comment"># @File : 22_括号生成.py</span>
+<span class="hljs-comment"># @Software : PyCharm</span>
+<span class="hljs-keyword">from</span> typing <span class="hljs-keyword">import</span> List
+
+<span class="hljs-comment"># left_right     这个变量代表左括号减去右括号，这个值必须一直&gt;=0，最后一定要=0</span>
+
+<span class="hljs-comment"># 我的错解</span>
+<span class="hljs-comment"># class Solution:</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#     def generateParenthesis(self, n: int, left_right, stack: list) -&gt; List[str]:</span>
+<span class="hljs-comment">#         if left_right &lt; 0 or len(stack)&gt;2*n:</span>
+<span class="hljs-comment">#             return stack</span>
+<span class="hljs-comment">#         elif len(stack) == 2*n and left_right == 0:</span>
+<span class="hljs-comment">#             return stack</span>
+<span class="hljs-comment">#         else:</span>
+<span class="hljs-comment">#             self.app_left(stack, left_right)</span>
+<span class="hljs-comment">#             self.generateParenthesis(n, left_right, stack)</span>
+<span class="hljs-comment">#             stack.pop()</span>
+<span class="hljs-comment">#             self.app_right(stack, left_right)</span>
+<span class="hljs-comment">#             self.generateParenthesis(n, left_right, stack)</span>
+<span class="hljs-comment">#             stack.pop()</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#     def app_left(self, stack: list, left_right):</span>
+<span class="hljs-comment">#         stack.append('(')</span>
+<span class="hljs-comment">#         left_right += 1</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment">#     def app_right(self, stack: list, left_right):</span>
+<span class="hljs-comment">#         stack.append(')')</span>
+<span class="hljs-comment">#         left_right -= 1</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># solution = Solution()</span>
+<span class="hljs-comment"># print(solution.generateParenthesis(8, 1, ["("]))</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">generateParenthesis</span><span class="hljs-params">(self, n: int)</span> -&gt; List[str]:</span>
+        ans = []
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">backtrack</span><span class="hljs-params">(S, left, right)</span>:</span>
+            <span class="hljs-keyword">if</span> len(S) == <span class="hljs-number">2</span> * n:
+                ans.append(<span class="hljs-string">''</span>.join(S))
+                <span class="hljs-keyword">return</span>
+            <span class="hljs-keyword">if</span> left &lt; n:
+                S.append(<span class="hljs-string">'('</span>)
+                backtrack(S, left+<span class="hljs-number">1</span>, right)
+                S.pop()
+            <span class="hljs-keyword">if</span> right &lt; left:
+                S.append(<span class="hljs-string">')'</span>)
+                backtrack(S, left, right+<span class="hljs-number">1</span>)
+                S.pop()
+        backtrack([], <span class="hljs-number">0</span>, <span class="hljs-number">0</span>)
+        <span class="hljs-keyword">return</span> ans
+solution = Solution()
+print(solution.generateParenthesis(<span class="hljs-number">4</span>))
+
+
+<span class="hljs-comment"># 另解</span>
+<span class="hljs-string">'''
+class Solution:
+    @lru_cache(None)
+    def generateParenthesis(self, n: int) -&gt; List[str]:
+        if n == 0:
+            return ['']
+        ans = []
+        for c in range(n):
+            for left in self.generateParenthesis(c):
+                for right in self.generateParenthesis(n-1-c):
+                    ans.append('(&#123;&#125;)&#123;&#125;'.format(left, right))
+        return ans
+'''</span></code></pre></div>
+
+<h3 id="42-接雨水"><a href="#42-接雨水" class="headerlink" title="42_接雨水"></a>42_接雨水</h3><div class="hljs"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding = =utf-8 -*-</span>
+<span class="hljs-comment"># @Time : 2020/4/10 16:26</span>
+<span class="hljs-comment"># @Author : 宋子龙</span>
+<span class="hljs-comment"># @File : 42_接雨水.py</span>
+<span class="hljs-comment"># @Software : PyCharm</span>
+
+<span class="hljs-comment"># 给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># 上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 感谢 Marcos 贡献此图。</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># 示例:</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># 输入: [0,1,0,2,1,0,1,3,2,1,2,1]</span>
+<span class="hljs-comment"># 输出: 6</span>
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">trap</span><span class="hljs-params">(self, height)</span> -&gt; int:</span>
+        ans = <span class="hljs-number">0</span>
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">count1</span><span class="hljs-params">(n)</span>:</span>
+            answer = <span class="hljs-number">0</span>
+            flag = <span class="hljs-number">1</span>
+            <span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> range(len(height)):
+
+                <span class="hljs-keyword">if</span> height[x] &gt;= n:
+                    <span class="hljs-keyword">if</span> flag &gt; <span class="hljs-number">1</span>:
+                        answer += x - up - <span class="hljs-number">1</span>
+                    flag += <span class="hljs-number">1</span>
+                    up = x
+            <span class="hljs-comment"># if len(l) == 1:</span>
+            <span class="hljs-comment">#     return 0</span>
+            <span class="hljs-comment"># for x in range(len(l)-1):</span>
+            <span class="hljs-comment">#     answer += (l[x+1] - l[x] - 1)</span>
+            print(answer)
+            <span class="hljs-keyword">return</span> answer
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> len(height):
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>
+        i = max(height)
+        <span class="hljs-keyword">while</span> i &gt;= <span class="hljs-number">1</span>:
+            ans += count1(i)
+            i -= <span class="hljs-number">1</span>
+        <span class="hljs-keyword">return</span> ans
+
+<span class="hljs-comment"># class Solution:</span>
+<span class="hljs-comment">#     def trap(self, height) -&gt; int:</span>
+<span class="hljs-comment">#         length = len(height)</span>
+<span class="hljs-comment">#         if length &lt; 3: return 0</span>
+<span class="hljs-comment">#         res, idx = 0, 0</span>
+<span class="hljs-comment">#         stack = []</span>
+<span class="hljs-comment">#         while idx &lt; length:</span>
+<span class="hljs-comment">#             while len(stack) &gt; 0 and height[idx] &gt; height[stack[-1]]:</span>
+<span class="hljs-comment">#                 top = stack.pop()  # index of the last element in the stack</span>
+<span class="hljs-comment">#                 if len(stack) == 0:</span>
+<span class="hljs-comment">#                     break</span>
+<span class="hljs-comment">#                 h = min(height[stack[-1]], height[idx]) - height[top]</span>
+<span class="hljs-comment">#                 dist = idx - stack[-1] - 1</span>
+<span class="hljs-comment">#                 res += (dist * h)</span>
+<span class="hljs-comment">#             stack.append(idx)</span>
+<span class="hljs-comment">#             idx += 1</span>
+<span class="hljs-comment">#         return res</span>
+<span class="hljs-comment"># 174801674</span>
+
+<span class="hljs-comment"># class Solution:</span>
+<span class="hljs-comment">#     def trap(self, height: List[int]) -&gt; int:</span>
+<span class="hljs-comment">#         n=len(height)</span>
+<span class="hljs-comment">#         left,right=0,n-1</span>
+<span class="hljs-comment">#         SUM,tmp,high=0,0,1</span>
+<span class="hljs-comment">#         while(left&lt;=right):</span>
+<span class="hljs-comment">#             while(left&lt;=right and height[left]&lt;high):</span>
+<span class="hljs-comment">#                 SUM+=height[left]</span>
+<span class="hljs-comment">#                 left+=1</span>
+<span class="hljs-comment">#             while(right&gt;=left and height[right]&lt;high):</span>
+<span class="hljs-comment">#                 SUM+=height[right]</span>
+<span class="hljs-comment">#                 right-=1</span>
+<span class="hljs-comment">#             high+=1</span>
+<span class="hljs-comment">#             tmp+=right-left+1</span>
+<span class="hljs-comment">#         return tmp-SUM</span>
+
+
+solution = Solution()
+print(solution.trap([自己加入测试用例]))</code></pre></div>
+
+<h3 id="151-翻转字符串中的单词"><a href="#151-翻转字符串中的单词" class="headerlink" title="151_翻转字符串中的单词"></a>151_翻转字符串中的单词</h3><div class="hljs"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding = =utf-8 -*-</span>
+<span class="hljs-comment"># @Time : 2020/4/10 12:19</span>
+<span class="hljs-comment"># @Author : 宋子龙</span>
+<span class="hljs-comment"># @File : 151_翻转字符串中的单词.py</span>
+<span class="hljs-comment"># @Software : PyCharm</span>
+
+<span class="hljs-string">'''
+给定一个字符串，逐个翻转字符串中的每个单词。
+示例 1：
+输入: "the sky is blue"
+输出: "blue is sky the"
+示例 2：
+输入: "  hello world!  "
+输出: "world! hello"
+解释: 输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。
+示例 3：
+输入: "a good   example"
+输出: "example good a"
+解释: 如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。
+说明：
+无空格字符构成一个单词。
+输入字符串可以在前面或者后面包含多余的空格，但是反转后的字符不能包括。
+如果两个单词间有多余的空格，将反转后单词间的空格减少到只含一个。
+'''</span>
+
+<span class="hljs-comment"># class Solution:</span>
+<span class="hljs-comment">#     def reverseWords(self, s: str) -&gt; str:</span>
+<span class="hljs-comment">#         i = -1</span>
+<span class="hljs-comment">#         rword = []</span>
+<span class="hljs-comment">#         nword = []</span>
+<span class="hljs-comment">#         while i &gt;= -len(s):</span>
+<span class="hljs-comment">#             if s[i] == ' ':</span>
+<span class="hljs-comment">#                 rword.append(''.join(nword))</span>
+<span class="hljs-comment">#                 nword = []</span>
+<span class="hljs-comment">#             else:</span>
+<span class="hljs-comment">#                 nword.append(s[i])</span>
+<span class="hljs-comment">#             i -= 1</span>
+<span class="hljs-comment">#         return rword</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">reverseWords</span><span class="hljs-params">(self, s: str)</span> -&gt; str:</span>
+        wordlist = s.split(sep=<span class="hljs-literal">None</span>, maxsplit=<span class="hljs-number">-1</span>)
+        <span class="hljs-comment"># print(wordlist)</span>
+        rewordlist = reversed(wordlist)
+        <span class="hljs-comment"># print(rewordlist)</span>
+        ans = <span class="hljs-string">' '</span>.join(rewordlist)
+
+        <span class="hljs-keyword">return</span> ans
+solution = Solution()
+print(solution.reverseWords(<span class="hljs-string">'hello world'</span>))</code></pre></div>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/leetcode/">leetcode</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/leetcode/">leetcode</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/04/16/hexo%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5B%E7%AB%99%E8%A7%86%E9%A2%91/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Jarvis's self-introduction video</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/04/15/%E5%9F%BA%E4%BA%8Epython3%E7%9A%84opencv%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E6%95%99%E7%A8%8B/">
+                        <span class="hidden-mobile">基于python3的opencv图像处理教程</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "eiB322SWcVUsFk4lolBUdDNu-gzGzoHsz",
+          app_key: "Jd6DKjFNo9aXSfVmRllU2G66",
+          placeholder: "Say something plz...",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer>
+  (function () {
+    // 查询存储的记录
+    function getRecord(Counter, target) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {target, time: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    }
+
+    // 发起自增请求
+    function increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    }
+
+    // 构建自增请求体
+    function buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "time": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    }
+
+    // 校验是否为有效的 UV
+    function validUV() {
+      var key = 'LeanCloud_UV_Flag';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    }
+
+    function addCount(Counter) {
+      var enableIncr = 'true' === 'true' && window.location.hostname !== 'localhost';
+      var getterArr = [];
+      var incrArr = [];
+
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#leancloud-site-pv-container');
+      if (pvCtn || enableIncr) {
+        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
+          incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-pv');
+          if (ele) {
+            ele.innerText = record.time + 1;
+            if (pvCtn) {
+              pvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#leancloud-site-uv-container');
+      if (uvCtn || enableIncr) {
+        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
+          var vuv = validUV();
+          vuv && incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-uv');
+          if (ele) {
+            ele.innerText = record.time + (vuv ? 1 : 0);
+            if (uvCtn) {
+              uvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 如果是文章，请求文章的浏览数，并自增
+      if ('true' === 'true') {
+        var viewCtn = document.querySelector('#leancloud-post-views-container');
+        if (viewCtn || enableIncr) {
+          var target = decodeURI('/2020/04/16/%E6%88%91%E7%9A%84leetcode%E4%B9%8B%E8%A1%8C/');
+          var viewGetter = getRecord(Counter, target).then((record) => {
+            incrArr.push(buildIncrement(record.objectId))
+            if (viewCtn) {
+              var ele = document.querySelector('#leancloud-post-views');
+              if (ele) {
+                ele.innerText = (record.time || 0) + 1;
+                viewCtn.style.display = 'inline';
+              }
+            }
+          });
+          getterArr.push(viewGetter);
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && increment(Counter, incrArr);
+        })
+      }
+    }
+
+    var app_id = 'eiB322SWcVUsFk4lolBUdDNu-gzGzoHsz'
+    var app_key = 'Jd6DKjFNo9aXSfVmRllU2G66'
+    var server_url = 'https://eib322sw.lc-cn-n1-shared.com'
+
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': app_id,
+            'X-LC-Key': app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+
+      addCount(Counter);
+    }
+
+    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(resp => resp.json())
+        .then(({api_server}) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "我的leetcode之行&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

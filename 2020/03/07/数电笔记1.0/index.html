@@ -1,0 +1,1049 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="尽人事，听天命">
+  <meta name="author" content="SZL">
+  <meta name="keywords" content="">
+  <title>数字电子技术基础随笔 - 我 走路带风</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>龙のブログ</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                主页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于我
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/top2.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      SZL
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-03-07 02:48" pubdate>
+        March 7, 2020 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      27
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">数字电子技术基础随笔</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：8 months ago
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h2 id="记录一下数电的学习"><a href="#记录一下数电的学习" class="headerlink" title="记录一下数电的学习"></a>记录一下数电的学习</h2><p><img src="https://pic1.zhimg.com/80/v2-70eccc2293c5f7f0620fe3b4c48055dd_720w.jpg" srcset="/img/loading.gif" alt="我爱学习"></p>
+<h1 id="1数制"><a href="#1数制" class="headerlink" title="1数制"></a>1数制</h1><h3 id="1-1-数制介绍"><a href="#1-1-数制介绍" class="headerlink" title="1.1 数制介绍"></a>1.1 数制介绍</h3><ul>
+<li><p>n进制=逢n进位</p>
+</li>
+<li><p>十六进制书写二进制的4、8、16位十分方便，成为主流进制</p>
+</li>
+</ul>
+<h3 id="1-2-数制转换"><a href="#1-2-数制转换" class="headerlink" title="1.2 数制转换"></a>1.2 数制转换</h3><h5 id="一、各种进制转换为十进制"><a href="#一、各种进制转换为十进制" class="headerlink" title="一、各种进制转换为十进制"></a>一、各种进制转换为十进制</h5><ul>
+<li>按位加权求和</li>
+</ul>
+<h5 id="二、十进制转换为其他进制"><a href="#二、十进制转换为其他进制" class="headerlink" title="二、十进制转换为其他进制"></a>二、十进制转换为其他进制</h5><ul>
+<li><h6 id="十进制-–-gt-二进制"><a href="#十进制-–-gt-二进制" class="headerlink" title="十进制 –&gt; 二进制"></a>十进制 –&gt; 二进制</h6><ul>
+<li>整数部分转换：除二取余，逆序排列</li>
+<li>小数部分转换：乘二取整，顺序排列</li>
+</ul>
+</li>
+<li><h6 id="十进制-–-gt-其它R进制"><a href="#十进制-–-gt-其它R进制" class="headerlink" title="十进制 –&gt; 其它R进制"></a>十进制 –&gt; 其它R进制</h6><ul>
+<li>整数部分转换：除R取余，逆序排列</li>
+<li>小数部分转换：乘R取整，顺序排列</li>
+</ul>
+</li>
+</ul>
+<h5 id="三、二进制与八进制"><a href="#三、二进制与八进制" class="headerlink" title="三、二进制与八进制"></a>三、二进制与八进制</h5><ul>
+<li><h6 id="二进制-–-gt-八进制"><a href="#二进制-–-gt-八进制" class="headerlink" title="二进制 –&gt; 八进制"></a>二进制 –&gt; 八进制</h6><ul>
+<li>二进制数从小数点开始分别向右和向左分成三组一位，每位依次换位三进制，不足补0</li>
+</ul>
+</li>
+<li><h6 id="八进制-–-gt-二进制"><a href="#八进制-–-gt-二进制" class="headerlink" title="八进制 –&gt; 二进制"></a>八进制 –&gt; 二进制</h6><ul>
+<li>各八进制数按位展开三位二进制即可</li>
+</ul>
+</li>
+</ul>
+<h5 id="四、二进制与十六进制"><a href="#四、二进制与十六进制" class="headerlink" title="四、二进制与十六进制"></a>四、二进制与十六进制</h5><ul>
+<li>同上</li>
+</ul>
+<h5 id="五、八进制与十六进制"><a href="#五、八进制与十六进制" class="headerlink" title="五、八进制与十六进制"></a>五、八进制与十六进制</h5><ul>
+<li>利用二进制为中介即可</li>
+</ul>
+<h3 id="1-3-二进制正负数及其表示"><a href="#1-3-二进制正负数及其表示" class="headerlink" title="1.3 二进制正负数及其表示"></a>1.3 二进制正负数及其表示</h3><h5 id="一、二进制的两种运算"><a href="#一、二进制的两种运算" class="headerlink" title="一、二进制的两种运算"></a>一、二进制的两种运算</h5><ul>
+<li>算术运算=加减乘除</li>
+<li>逻辑运算</li>
+</ul>
+<h5 id="二、二进制数正负数表示法"><a href="#二、二进制数正负数表示法" class="headerlink" title="二、二进制数正负数表示法"></a>二、二进制数正负数表示法</h5><ul>
+<li>用“0”表示正号，用“1”表示负号</li>
+</ul>
+<h5 id="三、二进制正负数的定点表示法"><a href="#三、二进制正负数的定点表示法" class="headerlink" title="三、二进制正负数的定点表示法"></a>三、二进制正负数的定点表示法</h5><ul>
+<li>整数定点：最高位为符号位，小数点在末尾</li>
+<li>小数定点：最高位为符号位，小数点在第一位和第二位之间</li>
+</ul>
+<h5 id="四、二进制正负数浮点表示法"><a href="#四、二进制正负数浮点表示法" class="headerlink" title="四、二进制正负数浮点表示法"></a>四、二进制正负数浮点表示法</h5><ul>
+<li>小数点位置可变</li>
+</ul>
+<h3 id="1-4-二进制数补码及其运算"><a href="#1-4-二进制数补码及其运算" class="headerlink" title="1.4 二进制数补码及其运算"></a>1.4 二进制数补码及其运算</h3><h5 id="一、三种表示法"><a href="#一、三种表示法" class="headerlink" title="一、三种表示法"></a>一、三种表示法</h5><ul>
+<li>原码表示</li>
+<li>反码表示<ul>
+<li>正数：等于原码</li>
+<li>负数：等于原码数值位按位取反</li>
+</ul>
+</li>
+<li>补码表示<ul>
+<li>正数：等于原码</li>
+<li>负数：等于反码在末位加1</li>
+</ul>
+</li>
+</ul>
+<h5 id="二、补码运算"><a href="#二、补码运算" class="headerlink" title="二、补码运算"></a>二、补码运算</h5><ul>
+<li>减法：转换成加法</li>
+<li>加减乘除四种运算都可以只用“移位”和“加法”两个操作实现</li>
+</ul>
+<h3 id="1-5-小结"><a href="#1-5-小结" class="headerlink" title="1.5 小结"></a>1.5 小结</h3><ul>
+<li>二进制（B）</li>
+<li>十进制（D）</li>
+<li>八进制（O）</li>
+<li>十六进制（H）主流进制</li>
+</ul>
+<hr>
+<h1 id="2-码制"><a href="#2-码制" class="headerlink" title="2 码制"></a>2 码制</h1><h3 id="2-1-码制定义"><a href="#2-1-码制定义" class="headerlink" title="2.1 码制定义"></a>2.1 码制定义</h3><ul>
+<li>用数字技术来处理和传输以<strong>二进制</strong>形式表示的<strong>数字、字母或特殊符号</strong>的系统</li>
+<li>用<strong>文字、符号或数码表示特定对象的过程称为编码</strong>。N位二进制代码有2^n个状态，可以表示同样多的对象</li>
+</ul>
+<h3 id="2-2-BCD码"><a href="#2-2-BCD码" class="headerlink" title="2.2 BCD码"></a>2.2 BCD码</h3><ul>
+<li>BCD码是一种至少用四位二进制编码表示<strong>一位十进制</strong>的代码</li>
+<li>BCD码仅表示0~9的十个数码，剩下6个为禁用码</li>
+<li>恒权码<ul>
+<li>8421-BCD</li>
+<li>2421-BCD：和为10的数互为反码</li>
+</ul>
+</li>
+<li>无权码<ul>
+<li>余3码：8421-BCD+0011，也有反射特性</li>
+<li>余3循环码：取自四位典型格雷码的3-12这十个代码，此为“余3”，且相邻两编码只有一位码元不一样</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-3-格雷码"><a href="#2-3-格雷码" class="headerlink" title="2.3 格雷码"></a>2.3 格雷码</h3><ul>
+<li><p>任何两个相邻十进制数的格雷码<strong>仅有一位不同</strong>，大大减小代码变化时的出错概率</p>
+</li>
+<li><p>典型格雷码和8421-BCD码关系<br>$$<br>Gi = Bi+1 ⊕ Bi<br>$$</p>
+</li>
+<li><p>修改格雷码与典型格雷码<strong>隔开三位</strong></p>
+</li>
+<li><p>修改格雷码、格雷码1有<strong>镜面反射特性</strong>，称反射码</p>
+</li>
+<li><p>典型格雷码与格雷码2仅是<strong>最后一个码</strong>不同</p>
+</li>
+</ul>
+<h3 id="2-4-检错码和纠错码"><a href="#2-4-检错码和纠错码" class="headerlink" title="2.4 检错码和纠错码"></a>2.4 检错码和纠错码</h3><ul>
+<li>奇/偶校验码<ul>
+<li>单向单错</li>
+<li>可分离码（信息码和校验码可分离）</li>
+</ul>
+</li>
+<li>误差纠错码（汉明码）<ul>
+<li>汉明距离：两个等长字符不同位数<ul>
+<li>最小汉明距离为1，无法检错</li>
+<li>最小汉明距离为2，可以检错（奇偶校验码）</li>
+<li>最小汉明距离为3，可以检错纠错</li>
+</ul>
+</li>
+<li>汉明码：在原数据插入若干校验码进行错误检查和纠错的编码技术</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-5-字符、数字代码"><a href="#2-5-字符、数字代码" class="headerlink" title="2.5 字符、数字代码"></a>2.5 字符、数字代码</h3><ul>
+<li>EBCDIC</li>
+<li>ASCII</li>
+</ul>
+<hr>
+<h1 id="3-逻辑代数的基本概念和运算规则（上）"><a href="#3-逻辑代数的基本概念和运算规则（上）" class="headerlink" title="3 逻辑代数的基本概念和运算规则（上）"></a>3 逻辑代数的基本概念和运算规则（上）</h1><h3 id="3-1-逻辑代数三种基本运算"><a href="#3-1-逻辑代数三种基本运算" class="headerlink" title="3.1 逻辑代数三种基本运算"></a>3.1 逻辑代数三种基本运算</h3><ul>
+<li>逻辑变量</li>
+<li>逻辑函数</li>
+<li>与（逻辑相乘、电路串联）</li>
+<li>或（逻辑相加、电路并联）</li>
+<li>非（逻辑求反）</li>
+<li>三种运算可以复合</li>
+</ul>
+<h3 id="3-2-逻辑函数描述方式"><a href="#3-2-逻辑函数描述方式" class="headerlink" title="3.2 逻辑函数描述方式"></a>3.2 逻辑函数描述方式</h3><ul>
+<li>逻辑函数表达式：用与、或、非表示逻辑关系的逻辑表达式</li>
+<li>真值表：输入变量所有取值对应的函数取值列为表格<ul>
+<li>不可遗漏、按二进制递增排列</li>
+<li>真值表具有唯一性</li>
+<li>真值表可用来判断两逻辑函数是否相等</li>
+<li>从真值表写出逻辑函数的<strong>一般方法</strong><ol>
+<li>从真值表中找出使逻辑函数为1的输入变量组合</li>
+<li>每组输入变量的组合对应一个乘积项，取值为1写为原变量，取值为0的写为反变量</li>
+<li>将乘积项相加，即可</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>逻辑（电路）图</li>
+<li>卡诺图（后续章节）</li>
+<li>波形图（时序图）</li>
+<li>语言描述<ul>
+<li>VHDL语言</li>
+</ul>
+</li>
+<li>以上六种方式都可以相互转换</li>
+</ul>
+<hr>
+<h1 id="4-逻辑代数的基本概念和运算规则（下）"><a href="#4-逻辑代数的基本概念和运算规则（下）" class="headerlink" title="4 逻辑代数的基本概念和运算规则（下）"></a>4 逻辑代数的基本概念和运算规则（下）</h1><h3 id="4-1-逻辑代数基础"><a href="#4-1-逻辑代数基础" class="headerlink" title="4.1 逻辑代数基础"></a>4.1 逻辑代数基础</h3><ul>
+<li><p>逻辑代数基本公式</p>
+<ol>
+<li>交换律</li>
+<li>结合律</li>
+<li>分配律</li>
+<li>01定律</li>
+<li>互补律</li>
+<li>重叠律</li>
+<li>还原律</li>
+<li>反演律</li>
+</ol>
+</li>
+<li><p>逻辑代数常用公式（吸收率）</p>
+<ol>
+<li><p>$$<br>A+AB=A;<br>A(A+B)=A<br>$$</p>
+</li>
+<li><p>$$<br>AB+A\overline{B}=A<br>;(A+B)(A+\overline{B})=A<br>$$</p>
+</li>
+<li><p>$$<br>A+\overline{A}B=A+B;<br>A(\overline{A}+B)=AB<br>$$</p>
+</li>
+<li><p>$$<br>AB+\overline{A}C+BCDE……=AB+\overline{A}C<br>$$</p>
+</li>
+<li><p>$$<br>A\overline{AB}=A\overline{B};<br>\overline{A}\overline{AB}=\overline{A}<br>$$</p>
+</li>
+</ol>
+</li>
+<li><p>异或运算</p>
+<ul>
+<li>定义：</li>
+</ul>
+<p>  [点下试试]: <a href="https://zhuanlan.zhihu.com/p/43826007" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/43826007</a>    “点击查看异或运算”</p>
+<ul>
+<li><p>应用：数据加密</p>
+</li>
+<li><p>性质</p>
+<ul>
+<li>交换律</li>
+<li>结合律</li>
+<li>分配律</li>
+<li>多变量异或运算<ul>
+<li>变量为1的个数为奇数，结果为1</li>
+<li>变量为1的个数为偶数，结果为0</li>
+<li>与变量为0的个数无关</li>
+</ul>
+</li>
+<li>多变量同或运算<ul>
+<li>与上面相反</li>
+</ul>
+</li>
+<li>偶数个相同变量A异（同）或结果为1</li>
+<li>奇书个相同变量A异（同）或结果为A</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-2-逻辑代数基本定律"><a href="#4-2-逻辑代数基本定律" class="headerlink" title="4.2 逻辑代数基本定律"></a>4.2 逻辑代数基本定律</h3><ul>
+<li>代入定理：在任何一个包含变量A的逻辑等式中，用<strong>另一个逻辑式</strong>代入式中所有A的位置，等式依然成立</li>
+<li>反演定理：对于任何一个逻辑式Y，将<strong>乘和加互换</strong>，<strong>0和1互换</strong>，<strong>原变量和反变量互换</strong>，得到结果为Y的反变量<ul>
+<li>不在单个变量上的非号保留</li>
+</ul>
+</li>
+<li>对偶定理：逻辑式相等，则他们的对偶式也相等<ul>
+<li>对偶式：<strong>乘和加互换</strong>，<strong>0和1互换</strong></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="5-逻辑函数的公式化简法"><a href="#5-逻辑函数的公式化简法" class="headerlink" title="5 逻辑函数的公式化简法"></a>5 逻辑函数的公式化简法</h1><h3 id="5-1-逻辑函数的最简形式和最简规则"><a href="#5-1-逻辑函数的最简形式和最简规则" class="headerlink" title="5.1 逻辑函数的最简形式和最简规则"></a>5.1 逻辑函数的最简形式和最简规则</h3><ul>
+<li>与项（乘积项）最少</li>
+<li>每个乘积项因子最少</li>
+</ul>
+<h3 id="5-2-常用的公式化简法"><a href="#5-2-常用的公式化简法" class="headerlink" title="5.2 常用的公式化简法"></a>5.2 常用的公式化简法</h3><ul>
+<li><p>并项法：利用公式<br>$$<br>AB+A\overline{B}=A<br>$$</p>
+</li>
+<li><p>吸收法：利用公式<br>$$<br>A+AB=A;<br>$$</p>
+</li>
+<li><p>消项法：利用公式<br>$$<br>AB+\overline{A}C+BCDE……=AB+\overline{A}C<br>$$</p>
+</li>
+<li><p>消因子法：利用公式<br>$$<br>A+\overline{A}B=A+B<br>$$</p>
+</li>
+<li><p>配项法：利用公式<br>$$<br>A+A=A;<br>A+\overline{A}=1<br>$$</p>
+</li>
+<li><p>综合法</p>
+</li>
+</ul>
+<h3 id="5-3-指定器件的逻辑函数化简"><a href="#5-3-指定器件的逻辑函数化简" class="headerlink" title="5.3 指定器件的逻辑函数化简"></a>5.3 指定器件的逻辑函数化简</h3><ul>
+<li>尽量使用单一门电路</li>
+</ul>
+<hr>
+<h1 id="6-逻辑函数的卡诺图表示"><a href="#6-逻辑函数的卡诺图表示" class="headerlink" title="6 逻辑函数的卡诺图表示"></a>6 逻辑函数的卡诺图表示</h1><h3 id="6-1-最小项定义及其性质"><a href="#6-1-最小项定义及其性质" class="headerlink" title="6.1 最小项定义及其性质"></a>6.1 最小项定义及其性质</h3><ul>
+<li>定义：在n变量逻辑函数中，若<strong>m为包含n个因子的乘积项</strong>，而且这n个变量均以原变量或反变量形式在m中出现一次，称m为该组变量<strong>最小项</strong>，有2^n个</li>
+<li>性质<ol>
+<li>在输入变量任何取值下<strong>必有一个且仅有一个</strong>最小项的值为1</li>
+<li><strong>全体最小项之和</strong>为1</li>
+<li>如果一个最小项不在F中，则<strong>必在F非</strong>中</li>
+<li>任意两个最小项<strong>乘积为0</strong></li>
+<li><strong>相邻性</strong>的两个最小项之和可以消去一对因子合并为一项</li>
+</ol>
+</li>
+</ul>
+<h3 id="6-2-最大项定义及其性质"><a href="#6-2-最大项定义及其性质" class="headerlink" title="6.2 最大项定义及其性质"></a>6.2 最大项定义及其性质</h3><ul>
+<li>定义：在n变量逻辑函数中，若M为n个变量之和，而且这n个变量均以原变量或反变量形式在M中出现一次，称M为该组变量<strong>最大项</strong>，有2^n个</li>
+<li>性质<ol>
+<li>在输入变量任何取值下<strong>必有一个且仅有一个</strong>最大项的值为0</li>
+<li><strong>全体最大项之和</strong>为0</li>
+<li>如果一个最大项不在F中，则<strong>必在F非</strong>中</li>
+<li>任意两个最大项<strong>之和</strong>为1</li>
+<li>只有<strong>一个变量不同</strong>的两最大项的<strong>乘积</strong>等于<strong>各相同变量</strong>之和</li>
+</ol>
+</li>
+</ul>
+<h3 id="6-3-逻辑函数两种标准形式"><a href="#6-3-逻辑函数两种标准形式" class="headerlink" title="6.3 逻辑函数两种标准形式"></a>6.3 逻辑函数两种标准形式</h3><ul>
+<li>最小项之和（与或式）：补项+分配律</li>
+<li>最大项之积（或与式）：用最小项之和转换</li>
+</ul>
+<h3 id="6-4-卡诺图定义及其特点"><a href="#6-4-卡诺图定义及其特点" class="headerlink" title="6.4 卡诺图定义及其特点"></a>6.4 卡诺图定义及其特点</h3><ul>
+<li>每个小方格代表一个最小项（2^n个小方格）</li>
+<li>几何相邻的小方格具有逻辑相邻性</li>
+<li>方便书写多位格雷码</li>
+</ul>
+<p><video src="F:%5CDocument%5CVideos%5C2020-03-13_22-11-52.mp4"></video></p>
+<h3 id="6-5-逻辑函数的卡诺图表示"><a href="#6-5-逻辑函数的卡诺图表示" class="headerlink" title="6.5 逻辑函数的卡诺图表示"></a>6.5 逻辑函数的卡诺图表示</h3><ul>
+<li>已知函数式→化为最小项之和→卡诺图中对应最小项方格填1，其它0→卡诺图</li>
+<li>真值表→卡诺图（本质一致）</li>
+<li>卡诺图→真值表→逻辑函数式</li>
+</ul>
+<hr>
+<h1 id="7-逻辑函数的卡诺图化简法"><a href="#7-逻辑函数的卡诺图化简法" class="headerlink" title="7 逻辑函数的卡诺图化简法"></a>7 逻辑函数的卡诺图化简法</h1><h3 id="7-1-卡诺图简化逻辑函数的基本性质"><a href="#7-1-卡诺图简化逻辑函数的基本性质" class="headerlink" title="7.1 卡诺图简化逻辑函数的基本性质"></a>7.1 卡诺图简化逻辑函数的基本性质</h3><ul>
+<li>并2消1，合并两个相邻“1”格，消去一个变量</li>
+<li>并4消2，合并四个相邻“1”格，消去两个变量</li>
+<li>并8消3</li>
+<li>并2^k消k</li>
+</ul>
+<h3 id="7-2-用卡诺图求解最简与或表达式"><a href="#7-2-用卡诺图求解最简与或表达式" class="headerlink" title="7.2 用卡诺图求解最简与或表达式"></a>7.2 用卡诺图求解最简与或表达式</h3><ul>
+<li>真值表或最小项之和形式</li>
+<li>画出卡诺图</li>
+<li>合并最小项（画圈）<ul>
+<li>1 格不能漏</li>
+<li>1 格允许被多于一个圈包围</li>
+<li>圈个数尽可能小</li>
+<li>圈面积越大越好，但是必须为2^k个方格</li>
+<li>不应有冗余项</li>
+</ul>
+</li>
+</ul>
+<h3 id="7-3-无关项及其在化简中的作用"><a href="#7-3-无关项及其在化简中的作用" class="headerlink" title="7.3 无关项及其在化简中的作用"></a>7.3 无关项及其在化简中的作用</h3><ul>
+<li>约束项：恒等于0的最小项</li>
+<li>任意项：或0或1不影响电路</li>
+<li>无关项：以上两项，用x在卡诺图中表示，可0可1，<strong>辅助化简</strong></li>
+</ul>
+<hr>
+<p>待更新…………</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%88%91%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">我的学习笔记</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%88%91%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">我的学习笔记</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/03/07/%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91%E7%9A%84%E7%94%9F%E6%88%90%E4%BB%A5%E5%8F%8A%E7%BC%96%E7%A0%81/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">哈夫曼树的生成和编码</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/03/07/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "eiB322SWcVUsFk4lolBUdDNu-gzGzoHsz",
+          app_key: "Jd6DKjFNo9aXSfVmRllU2G66",
+          placeholder: "Say something plz...",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer>
+  (function () {
+    // 查询存储的记录
+    function getRecord(Counter, target) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {target, time: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    }
+
+    // 发起自增请求
+    function increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    }
+
+    // 构建自增请求体
+    function buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "time": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    }
+
+    // 校验是否为有效的 UV
+    function validUV() {
+      var key = 'LeanCloud_UV_Flag';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    }
+
+    function addCount(Counter) {
+      var enableIncr = 'true' === 'true' && window.location.hostname !== 'localhost';
+      var getterArr = [];
+      var incrArr = [];
+
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#leancloud-site-pv-container');
+      if (pvCtn || enableIncr) {
+        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
+          incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-pv');
+          if (ele) {
+            ele.innerText = record.time + 1;
+            if (pvCtn) {
+              pvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#leancloud-site-uv-container');
+      if (uvCtn || enableIncr) {
+        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
+          var vuv = validUV();
+          vuv && incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-uv');
+          if (ele) {
+            ele.innerText = record.time + (vuv ? 1 : 0);
+            if (uvCtn) {
+              uvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 如果是文章，请求文章的浏览数，并自增
+      if ('true' === 'true') {
+        var viewCtn = document.querySelector('#leancloud-post-views-container');
+        if (viewCtn || enableIncr) {
+          var target = decodeURI('/2020/03/07/%E6%95%B0%E7%94%B5%E7%AC%94%E8%AE%B01.0/');
+          var viewGetter = getRecord(Counter, target).then((record) => {
+            incrArr.push(buildIncrement(record.objectId))
+            if (viewCtn) {
+              var ele = document.querySelector('#leancloud-post-views');
+              if (ele) {
+                ele.innerText = (record.time || 0) + 1;
+                viewCtn.style.display = 'inline';
+              }
+            }
+          });
+          getterArr.push(viewGetter);
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && increment(Counter, incrArr);
+        })
+      }
+    }
+
+    var app_id = 'eiB322SWcVUsFk4lolBUdDNu-gzGzoHsz'
+    var app_key = 'Jd6DKjFNo9aXSfVmRllU2G66'
+    var server_url = 'https://eib322sw.lc-cn-n1-shared.com'
+
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': app_id,
+            'X-LC-Key': app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+
+      addCount(Counter);
+    }
+
+    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(resp => resp.json())
+        .then(({api_server}) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "数字电子技术基础随笔&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

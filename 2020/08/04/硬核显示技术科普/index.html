@@ -1,0 +1,790 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="尽人事，听天命">
+  <meta name="author" content="SZL">
+  <meta name="keywords" content="">
+  <title>硬核显示技术科普 - 我 走路带风</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>龙のブログ</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                主页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于我
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/post/screen.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      SZL
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-08-04 12:00" pubdate>
+        August 4, 2020 pm
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      918 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      9
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">硬核显示技术科普</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：6 months ago
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="显示器"><a href="#显示器" class="headerlink" title="显示器"></a><strong>显示器</strong></h3><blockquote>
+<p>  显示器（display）通常也被称为监视器。显示器是属于电脑的<a href="https://baike.baidu.com/item/I%2FO设备" target="_blank" rel="noopener">I/O设备</a>，即<a href="https://baike.baidu.com/item/输入输出设备/8166762" target="_blank" rel="noopener">输入输出设备</a>。它是一种将一定的电子文件通过特定的传输设备显示到屏幕上再反射到人眼的显示工具。</p>
+</blockquote>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li><h5 id="CRT显像管显示器过于久远"><a href="#CRT显像管显示器过于久远" class="headerlink" title="CRT显像管显示器过于久远"></a>CRT显像管显示器过于久远</h5><blockquote>
+<ul>
+<li>CRT显示器的核心部件是CRT显像管，CRT显像管使用电子枪发射高速电子，利用垂直和水平的偏转线圈控制高速电子的偏转角度，通过电压来调节电子束的功率，经过调节高速电子击打屏幕上的磷光物质，在屏幕上形成明暗不同图形和文字。</li>
+<li>彩色显像管屏幕上的每一个像素点都由红、绿、蓝三种<a href="https://wiki.mbalib.com/wiki/涂料" target="_blank" rel="noopener">涂料</a>组合而成，由三束电子束分别激活这三种颜色的磷光涂料，以不同强度的电子束调节三种颜色的明暗程度就可得到所需的颜色。为了让电子束瞄得精准，防止产生不正确的颜色或重像，必须对电子束进行精确的<a href="https://wiki.mbalib.com/wiki/控制" target="_blank" rel="noopener">控制</a>。</li>
+</ul>
+</blockquote>
+</li>
+<li><h5 id="LCD"><a href="#LCD" class="headerlink" title="LCD"></a>LCD</h5><blockquote>
+<h4 id="液晶显示器-Liquid-Crystal-Display，LCD"><a href="#液晶显示器-Liquid-Crystal-Display，LCD" class="headerlink" title="液晶显示器(Liquid Crystal Display，LCD)"></a><strong>液晶显示器(Liquid Crystal Display，LCD)</strong></h4><p>  <img src="https://wx1.sinaimg.cn/orj360/0069Z3fPly1gheoh8pvnrj31250apwny.jpg" srcset="/img/loading.gif" alt=""></p>
+<h6 id="偏光膜：只允许特定方向光通过"><a href="#偏光膜：只允许特定方向光通过" class="headerlink" title="偏光膜：只允许特定方向光通过"></a>偏光膜：只允许特定方向光通过</h6><ul>
+<li><p><img src="https://wx3.sinaimg.cn/orj360/0069Z3fPly1gheoh90ip1j30ic08m43i.jpg" srcset="/img/loading.gif" alt=""></p>
+</li>
+<li><p><img src="https://wx3.sinaimg.cn/orj360/0069Z3fPly1gheoh99yjoj30lr08o7ag.jpg" srcset="/img/loading.gif" alt=""></p>
+</li>
+<li><p>通过改变电压改变液晶层的扭曲方式从而控制背光板发出的光透过滤光片的程度，从而控制人眼看到的颜色和亮度</p>
+<h6 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h6></li>
+<li><p>技术成熟，价格低廉</p>
+</li>
+<li><p>无法显示纯黑色，导致画面对比度不够大</p>
+</li>
+<li><p>80%光都被过滤，一定亮度需要更大功耗</p>
+</li>
+<li><p>LED是把LCD的背光板换成了LED背光板，本质上还是液晶显示器</p>
+<h6 id="详细了解OLED请点👉-这里"><a href="#详细了解OLED请点👉-这里" class="headerlink" title="详细了解OLED请点👉          ** 这里**"></a>详细了解OLED请点👉          ** <a href="[https://zh.wikipedia.org/zh-cn/%E6%B6%B2%E6%99%B6%E6%98%BE%E7%A4%BA%E5%99%A8](https://zh.wikipedia.org/zh-cn/液晶显示器)">这里</a>**</h6></li>
+</ul>
+</blockquote>
+</li>
+<li><h5 id="OLED"><a href="#OLED" class="headerlink" title="OLED"></a>OLED</h5><blockquote>
+<ul>
+<li><h6 id="OLED技术（organic-light-emitting-diode-有机发光二极管"><a href="#OLED技术（organic-light-emitting-diode-有机发光二极管" class="headerlink" title="OLED技术（organic light-emitting diode)  有机发光二极管"></a><strong>OLED技术（organic light-emitting diode)  有机发光二极管</strong></h6></li>
+<li><h6 id=""><a href="#" class="headerlink" title=""></a><img src="http://zmq-upload-file-imgs.oss-cn-hangzhou.aliyuncs.com/article/36225-196dc7ed7e8eae475a577f007514f59b" srcset="/img/loading.gif" alt=""></h6></li>
+<li><h6 id="OLED的基本结构是在铟锡氧化物（ITO）玻璃上制作一层几十纳米厚的有机发光材料作发光层，发光层上方有一层低功函数的金属电极，构成如三明治的结构。"><a href="#OLED的基本结构是在铟锡氧化物（ITO）玻璃上制作一层几十纳米厚的有机发光材料作发光层，发光层上方有一层低功函数的金属电极，构成如三明治的结构。" class="headerlink" title="OLED的基本结构是在铟锡氧化物（ITO）玻璃上制作一层几十纳米厚的有机发光材料作发光层，发光层上方有一层低功函数的金属电极，构成如三明治的结构。"></a>OLED的基本结构是在铟锡氧化物（ITO）玻璃上制作一层几十纳米厚的有机发光材料作发光层，发光层上方有一层低功函数的金属电极，构成如三明治的结构。</h6></li>
+<li><h6 id="简单来说，OLED技术是自发光的，所以会有很多优点"><a href="#简单来说，OLED技术是自发光的，所以会有很多优点" class="headerlink" title="简单来说，OLED技术是自发光的，所以会有很多优点"></a>简单来说，OLED技术是自发光的，所以会有很多优点</h6><ul>
+<li>黑色显示，OLED只需要熄灭发光有机物即可，可以做到极致的黑，而LED只能做到像是类似窗帘拉上挡住大部分太阳光的效果，所以OLED的屏幕会在夜间模式下功耗非常之小</li>
+<li>亮度方面，因为没有任何遮挡所以，亮度也是OLED要胜过LCD许多</li>
+<li>反应时间，OLED只需调整每个发光二极管，而LCD需要通过电压控制液晶的扭曲程度，显然OLED略胜一筹</li>
+<li>视角问题，LCD的最佳视角颇为狭窄，而OLED可以达到最大 84 度的偏角观赏</li>
+<li>功耗问题，同亮度问题，产生同样的亮度，OLED的功耗小很多</li>
+</ul>
+</li>
+<li><h6 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h6><ul>
+<li>尺寸问题，由于制作工艺原因，制作尺寸比较大的OLED屏幕难度上升了很多个数量级，所以OLED目前应用在小规模屏幕，比如智能手表、智能手机等，而LCD已经拥有了成熟的制作工艺和市场，几乎所有大尺寸屏幕使用的都是LCD屏幕</li>
+<li>寿命问题，因为OLED自发光，所以长期大功率使用条件下，OLED会出现点亮的化合物会随着时间的推移而降解的问题，也就是烧屏，不过只要不是刻意的滥用，几乎不会出现这种情况</li>
+<li>价格方面，不言而喻，LCD赢得轻而易举</li>
+</ul>
+</li>
+<li><h6 id="详细了解OLED请点👉-这里-1"><a href="#详细了解OLED请点👉-这里-1" class="headerlink" title="详细了解OLED请点👉          ** 这里**"></a>详细了解OLED请点👉          ** <a href="https://www.hangjianet.com/app/share/topicDetail?id=15422809007930000" target="_blank" rel="noopener">这里</a>**</h6></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E7%A7%91%E6%99%AE/">科普</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%A7%91%E6%99%AE/">科普</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/09/11/git%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AE%80%E5%8D%95%E6%93%8D%E4%BD%9C/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">git的简单操作</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/08/03/%E7%BF%BB%E5%A2%99%EF%BC%9F/">
+                        <span class="hidden-mobile">和你一起了解“墙”</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "eiB322SWcVUsFk4lolBUdDNu-gzGzoHsz",
+          app_key: "Jd6DKjFNo9aXSfVmRllU2G66",
+          placeholder: "Say something plz...",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer>
+  (function () {
+    // 查询存储的记录
+    function getRecord(Counter, target) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {target, time: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    }
+
+    // 发起自增请求
+    function increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    }
+
+    // 构建自增请求体
+    function buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "time": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    }
+
+    // 校验是否为有效的 UV
+    function validUV() {
+      var key = 'LeanCloud_UV_Flag';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    }
+
+    function addCount(Counter) {
+      var enableIncr = 'true' === 'true' && window.location.hostname !== 'localhost';
+      var getterArr = [];
+      var incrArr = [];
+
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#leancloud-site-pv-container');
+      if (pvCtn || enableIncr) {
+        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
+          incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-pv');
+          if (ele) {
+            ele.innerText = record.time + 1;
+            if (pvCtn) {
+              pvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#leancloud-site-uv-container');
+      if (uvCtn || enableIncr) {
+        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
+          var vuv = validUV();
+          vuv && incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-uv');
+          if (ele) {
+            ele.innerText = record.time + (vuv ? 1 : 0);
+            if (uvCtn) {
+              uvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 如果是文章，请求文章的浏览数，并自增
+      if ('true' === 'true') {
+        var viewCtn = document.querySelector('#leancloud-post-views-container');
+        if (viewCtn || enableIncr) {
+          var target = decodeURI('/2020/08/04/%E7%A1%AC%E6%A0%B8%E6%98%BE%E7%A4%BA%E6%8A%80%E6%9C%AF%E7%A7%91%E6%99%AE/');
+          var viewGetter = getRecord(Counter, target).then((record) => {
+            incrArr.push(buildIncrement(record.objectId))
+            if (viewCtn) {
+              var ele = document.querySelector('#leancloud-post-views');
+              if (ele) {
+                ele.innerText = (record.time || 0) + 1;
+                viewCtn.style.display = 'inline';
+              }
+            }
+          });
+          getterArr.push(viewGetter);
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && increment(Counter, incrArr);
+        })
+      }
+    }
+
+    var app_id = 'eiB322SWcVUsFk4lolBUdDNu-gzGzoHsz'
+    var app_key = 'Jd6DKjFNo9aXSfVmRllU2G66'
+    var server_url = 'https://eib322sw.lc-cn-n1-shared.com'
+
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': app_id,
+            'X-LC-Key': app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+
+      addCount(Counter);
+    }
+
+    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(resp => resp.json())
+        .then(({api_server}) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "硬核显示技术科普&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

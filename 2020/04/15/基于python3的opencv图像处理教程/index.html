@@ -1,0 +1,987 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="尽人事，听天命">
+  <meta name="author" content="SZL">
+  <meta name="keywords" content="">
+  <title>基于python3的opencv图像处理教程 - 我 走路带风</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/vs2015.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>龙のブログ</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                主页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于我
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('/img/post/opencv.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      SZL
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-04-15 01:39" pubdate>
+        April 15, 2020 am
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- LeanCloud 统计文章PV -->
+      <span id="leancloud-post-views-container" class="post-meta" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="leancloud-post-views"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">基于python3的opencv图像处理教程</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：6 months ago
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h2 id="基于python3的opencv图像处理教程"><a href="#基于python3的opencv图像处理教程" class="headerlink" title="基于python3的opencv图像处理教程"></a>基于python3的opencv图像处理教程</h2><h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="加载和显示"><a href="#加载和显示" class="headerlink" title="加载和显示"></a>加载和显示</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding = =utf-8 -*-</span>
+<span class="hljs-comment"># @Time : 2020/4/15 0:44</span>
+<span class="hljs-comment"># @Author : 宋子龙</span>
+<span class="hljs-comment"># @File : tutorial_1.py</span>
+<span class="hljs-comment"># @Software : PyCharm</span>
+
+<span class="hljs-keyword">import</span> cv2 <span class="hljs-keyword">as</span> cv
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">video_demo</span><span class="hljs-params">()</span>:</span>
+    capture = cv.VideoCapture(<span class="hljs-number">0</span>)
+    <span class="hljs-keyword">while</span>(<span class="hljs-literal">True</span>):
+        ret, frame = capture.read()  <span class="hljs-comment"># 捕捉摄像头</span>
+        frame = cv.flip(frame, <span class="hljs-number">1</span>)    <span class="hljs-comment"># 不镜像</span>
+        cv.imshow(<span class="hljs-string">"video"</span>, frame)
+        c = cv.waitKey(<span class="hljs-number">50</span>)           <span class="hljs-comment">#</span>
+        <span class="hljs-keyword">if</span> c == <span class="hljs-number">27</span>:
+            <span class="hljs-keyword">break</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_image_info</span><span class="hljs-params">(image)</span>:</span>
+    print(type(image))				<span class="hljs-comment"># 图像类型</span>
+    print(image.shape) 				<span class="hljs-comment"># 形状</span>
+    print(image.size)				<span class="hljs-comment"># 尺寸</span>
+    print(image.dtype)				<span class="hljs-comment"># 每个通道字节</span>
+    pixel_data = np.array(image)	 <span class="hljs-comment">#获取像素</span>
+    print(pixel_data)   			<span class="hljs-comment"># 像素数据</span>
+
+
+
+src = cv.imread(<span class="hljs-string">"F:\Document\Picture/bizhi.jpg"</span>)
+get_image_info(src)
+<span class="hljs-string">'''输出
+E:\Project\PythonProjects\venv\Scripts\python.exe E:/Project/PythonProjects/opencv_tutorial/tutorial_1.py
+&lt;class 'numpy.ndarray'&gt;   读出类型是一个n维的数组
+(3744, 5616, 3)     高 宽 通道
+63078912            三者乘积
+uint8               每个通道占8个字节 
+Hi, Python!
+'''</span>
+<span class="hljs-comment"># cv.imwrite("保存的目录", src)					  # 保存图像</span>
+cv.namedWindow(<span class="hljs-string">"input image"</span>, cv.WINDOW_AUTOSIZE)	<span class="hljs-comment"># 建立一个窗口</span>
+cv.imshow(<span class="hljs-string">"input image"</span>, src)					   <span class="hljs-comment"># 展示图像</span>
+video_demo()                                          <span class="hljs-comment"># 播放视频</span>
+cv.waitKey(<span class="hljs-number">0</span>)                                          <span class="hljs-comment">#</span>
+cv.destroyAllWindows()                                  <span class="hljs-comment"># 关闭所有窗口</span>
+print(<span class="hljs-string">"Hi, Python!"</span>)
+
+<span class="hljs-string">'''
+while(1)&#123; if(waitKey(100)==27)break; &#125;
+在这个程序中,我们告诉OpenCv等待用户触发事件,等待时间为100ms，
+如果在这个时间段内, 用户按下ESC(ASCII码为27),则跳出循环,否则,则跳出循环
+
+while(1)&#123;if(waitkey(1000)==ord('q'))break;&#125;
+我们告诉OpenCv等待用户触发事件,等待时间为1000ms，
+如果在这个时间段内, 用户按下'q',则跳出循环,否则,则跳出循环
+
+cv.waitKey(delay) : 
+可以用 cv.waitKey(delay) 函数延迟窗口显示时间。其中参数dealy表示要延迟的毫秒数。
+由于操作系统是多线程执行，所以严格来说dealy表示最少延迟多少毫秒。
+delay 默认值为 0，当 dealy &lt;=0 时，表示永久延迟，直到键盘按下任意键。
+该函数会返回按键的  ASCII 值，如果在dealy值期间一直没有按，则返回 -1。
+&amp; 0xff ：
+在某些系统中，返回的键盘值可能不是ASCII编码的，所以通过与运算只取字符最后一个字节
+'''</span></code></pre></div>
+
+<h2 id="numpy数组操作"><a href="#numpy数组操作" class="headerlink" title="numpy数组操作"></a>numpy数组操作</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-keyword">import</span> cv2 <span class="hljs-keyword">as</span> cv
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">access_pixel</span><span class="hljs-params">(image)</span>:</span>
+    print(image.shape)
+    height = image.shape[<span class="hljs-number">0</span>]
+    width = image.shape[<span class="hljs-number">1</span>]
+    channels = image.shape[<span class="hljs-number">2</span>]
+    print(<span class="hljs-string">"width: %s, height: %s, channels: %s"</span>%(height, width, channels))
+    <span class="hljs-keyword">for</span> row <span class="hljs-keyword">in</span> range(height):
+        <span class="hljs-keyword">for</span> col <span class="hljs-keyword">in</span> range(width):
+            <span class="hljs-keyword">for</span> c <span class="hljs-keyword">in</span> range(channels):
+                pv = image[row, col, c]
+                image[row, col, c] = <span class="hljs-number">255</span> - pv
+    cv.imshow(<span class="hljs-string">"pixel_demo"</span>, image)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">inverse</span><span class="hljs-params">(image)</span>:</span>
+    dst = cv.bitwise_not(image)
+    cv.imshow(<span class="hljs-string">"inverse demo"</span>,dst)
+
+
+<span class="hljs-comment"># 使用zeros()和ones()来初始化一个图像</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">creat_image</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">'''
+    # 多通道
+    img = np.zeros([400, 400, 3], np.uint8)             #np.uint8 指的是无符号整数（0 to 255），具体可以去网站https://www.runoob.com/numpy/numpy-dtype.html查看
+    img[: , : , 0] = np.ones([400, 400]) * 255         #只对blue通道做修改，改为255
+    cv.imshow("newimage", img)
+
+    # 单通道  黑白灰
+    img = np.zeros([400, 400, 1], np.uint8)
+    img[: , : , 0] = np.ones([400, 400]) * 127
+    cv.imshow("newimage", img)
+    '''</span>
+    m1 = np.ones([<span class="hljs-number">3</span>, <span class="hljs-number">3</span>], np.uint8)
+    m1.fill(<span class="hljs-number">122.388</span>)
+    print(m1)
+
+    m2 = m1.reshape([<span class="hljs-number">1</span>,<span class="hljs-number">9</span>])
+    print(m2)
+
+src = cv.imread(<span class="hljs-string">"E:/Project/PythonProjects/test/adward.jpg"</span>)<span class="hljs-comment"># blue green red  三通道</span>
+cv.namedWindow(<span class="hljs-string">"input image"</span>, cv.WINDOW_AUTOSIZE)
+cv.imshow(<span class="hljs-string">"input image"</span>, src)
+
+t1 = cv.getTickCount()  <span class="hljs-comment">#读取当前电脑时间(s)，由此判断程序运行时间</span>
+creat_image()
+<span class="hljs-comment"># access_pixel(src)         #call 属性读取函数</span>
+inverse(src)                <span class="hljs-comment">#自带的像素取反API，因为是c语言底层，所以很快，可以提高效率</span>
+t2 = cv.getTickCount()
+time = (t2-t1)/cv.getTickFrequency()
+print(<span class="hljs-string">"time: %s ms"</span>%(time * <span class="hljs-number">1000</span>))
+
+cv.waitKey(<span class="hljs-number">0</span>)
+cv.destroyAllWindows()</code></pre></div>
+
+<h2 id="色彩空间"><a href="#色彩空间" class="headerlink" title="色彩空间"></a>色彩空间</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding = =utf-8 -*-</span>
+<span class="hljs-comment"># @Time : 2020/4/18 0:05</span>
+<span class="hljs-comment"># @Author : 宋子龙</span>
+<span class="hljs-comment"># @File : tutorial_3.py</span>
+<span class="hljs-comment"># @Software : PyCharm</span>
+<span class="hljs-keyword">import</span> cv2 <span class="hljs-keyword">as</span> cv
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">extrace_object</span><span class="hljs-params">()</span>:</span>
+    capture = cv.VideoCapture(<span class="hljs-string">"F:\Document\Videos\英雄时刻.mp4"</span>)
+    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+        ret, frame = capture.read()   <span class="hljs-comment"># 两个参数分别表示： 有没有读到文件， 一帧图像</span>
+        <span class="hljs-keyword">if</span> ret == <span class="hljs-literal">False</span>:
+            <span class="hljs-keyword">break</span>
+        hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
+        lower_hsv = np.array([<span class="hljs-number">32</span>, <span class="hljs-number">43</span>, <span class="hljs-number">46</span>])
+        upper_hsv = np.array([<span class="hljs-number">43</span>, <span class="hljs-number">255</span>, <span class="hljs-number">255</span>])
+        mask = cv.inRange(hsv, lowerb=lower_hsv, upperb=upper_hsv)
+        cv.imshow(<span class="hljs-string">"video"</span>, frame)
+        cv.imshow(<span class="hljs-string">"mask"</span>, mask)
+        c = cv.waitKey(<span class="hljs-number">40</span>)
+        <span class="hljs-keyword">if</span> c == <span class="hljs-number">27</span>:
+            <span class="hljs-keyword">break</span>
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">color_space_demo</span><span class="hljs-params">(image)</span>:</span>  <span class="hljs-comment"># 几种色彩空间转化</span>
+    gray = cv.cvtColor(image, cv.COLOR_BGR2BGRA)
+    cv.imshow(<span class="hljs-string">"gray"</span>, gray)
+    hsv = cv.cvtColor(image, cv.COLOR_BGR2HSV)
+    cv.imshow(<span class="hljs-string">"hsv"</span>, hsv)
+    yuv = cv.cvtColor(image, cv.COLOR_BGR2YUV)
+    cv.imshow(<span class="hljs-string">"yuv"</span>, yuv)
+
+
+print(<span class="hljs-string">"----------Hi, Python!----------"</span>)
+src = cv.imread(<span class="hljs-string">"E:/Project/PythonProjects/test/adward.jpg"</span>)
+cv.namedWindow(<span class="hljs-string">"input image"</span>, cv.WINDOW_AUTOSIZE)	<span class="hljs-comment"># 建立一个窗口</span>
+<span class="hljs-comment"># cv.imshow("input image", src)					   # 展示图像</span>
+<span class="hljs-comment"># color_space_demo(src)</span>
+
+b, g ,r = cv.split(src)   <span class="hljs-comment"># 通道分离</span>
+<span class="hljs-comment"># cv.imshow("blue", b)</span>
+<span class="hljs-comment"># cv.imshow("green", g)</span>
+<span class="hljs-comment"># cv.imshow("red", r)</span>
+
+<span class="hljs-comment"># src[:, :, 0] = 0</span>
+<span class="hljs-comment"># cv.imshow("input_no_blue image", src)</span>
+<span class="hljs-comment"># src = cv.merge([b, g ,r])</span>
+<span class="hljs-comment"># cv.imshow("input image", src)</span>
+extrace_object()
+cv.waitKey(<span class="hljs-number">0</span>)                                          <span class="hljs-comment">#</span>
+cv.destroyAllWindows()                                  <span class="hljs-comment"># 关闭所有窗口</span></code></pre></div>
+
+<h2 id="像素运算"><a href="#像素运算" class="headerlink" title="像素运算"></a>像素运算</h2><div class="hljs"><pre><code class="hljs python"><span class="hljs-comment"># -*- coding = =utf-8 -*-</span>
+<span class="hljs-comment"># @Time : 2020/4/19 0:07</span>
+<span class="hljs-comment"># @Author : 宋子龙</span>
+<span class="hljs-comment"># @File : tutorial_4.py</span>
+<span class="hljs-comment"># @Software : PyCharm</span>
+
+<span class="hljs-keyword">import</span> cv2 <span class="hljs-keyword">as</span> cv
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-comment"># 加减乘除</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_demo</span><span class="hljs-params">(m1, m2)</span>:</span>
+    dst = cv.add(m1, m2)
+    cv.imshow(<span class="hljs-string">"add_demo"</span>, dst)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">subtract_demo</span><span class="hljs-params">(m1, m2)</span>:</span>
+    dst = cv.subtract(m1, m2)
+    cv.imshow(<span class="hljs-string">"subtrract_demo"</span>, dst)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">divide_demo</span><span class="hljs-params">(m1, m2)</span>:</span>
+    dst = cv.divide(m1, m2)
+    cv.imshow(<span class="hljs-string">"divide_demo"</span>, dst)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">multiply_demo</span><span class="hljs-params">(m1, m2)</span>:</span>
+    dst = cv.multiply(m1, m2)
+    cv.imshow(<span class="hljs-string">"multiply_demo"</span>, dst)
+
+
+<span class="hljs-comment"># 逻辑运算</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">logic_demo</span><span class="hljs-params">(m1, m2)</span>:</span>
+    dst1 = cv.bitwise_and(m1, m2)
+    dst2 = cv.bitwise_or(m1, m2)
+    dst3 = cv.bitwise_not(m1)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">contrast_brightness_demo</span><span class="hljs-params">(image, c, b)</span>:</span>
+    h, w, ch = image.shape
+    blank = np.zeros([h, w ,ch], image.dtype)
+    dst = cv.addWeighted(image, c, blank, <span class="hljs-number">1</span>-c, b)
+
+    cv.imshow(<span class="hljs-string">"con-bri-demo"</span>, dst)
+
+
+<span class="hljs-comment"># 取均值 求方差  可以判断图像大致状态</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">others</span><span class="hljs-params">(m1, m2)</span>:</span>
+    <span class="hljs-comment"># M1 = cv.mean(m1)</span>
+    <span class="hljs-comment"># M2 = cv.mean(m2)</span>
+    <span class="hljs-comment"># print(M1)</span>
+    <span class="hljs-comment"># print(M2)</span>
+    M1, dev1 = cv.meanStdDev(m1)
+    M2, dev2 = cv.meanStdDev(m2)
+    print(M1)
+    print(M2)
+    print(dev1)
+    print(dev2)
+
+
+print(<span class="hljs-string">"----------Hi, Python!----------"</span>)
+src = cv.imread(<span class="hljs-string">"E:/Project/PythonProjects/test/adward.jpg"</span>)
+src1 = cv.imread(<span class="hljs-string">"E:/Project/PythonProjects/test/6456271b6a95eca99a64982ab1526224.jpg"</span>)
+src2 = cv.imread(<span class="hljs-string">"E:/Project/PythonProjects/test/u=1378320566,246412302&amp;fm=26&amp;gp=0.jpg"</span>)
+print(src1.shape)
+print(src2.shape)
+<span class="hljs-comment"># cv.namedWindow("input image1", cv.WINDOW_AUTOSIZE)</span>
+<span class="hljs-comment"># cv.imshow("input image1", src1)</span>
+<span class="hljs-comment"># cv.imshow("input image2", src2)</span>
+<span class="hljs-comment"># add_demo(src1, src2)</span>
+<span class="hljs-comment"># subtract_demo(src1, src2)</span>
+<span class="hljs-comment"># divide_demo(src1, src2)</span>
+<span class="hljs-comment"># multiply_demo(src1, src2)</span>
+<span class="hljs-comment"># others(src1, src2)</span>
+cv.imshow(<span class="hljs-string">"ori-pic"</span>, src)
+contrast_brightness_demo(src, <span class="hljs-number">2</span>, <span class="hljs-number">10</span>)
+cv.waitKey(<span class="hljs-number">0</span>)
+cv.destroyAllWindows()</code></pre></div>
+
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Python/">Python</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Python/">Python</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/04/16/%E6%88%91%E7%9A%84leetcode%E4%B9%8B%E8%A1%8C/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">我的leetcode之行</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/03/20/Python/">
+                        <span class="hidden-mobile">Python</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    function loadValine() {
+      addScript('https://cdn.staticfile.org/valine/1.4.14/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "eiB322SWcVUsFk4lolBUdDNu-gzGzoHsz",
+          app_key: "Jd6DKjFNo9aXSfVmRllU2G66",
+          placeholder: "Say something plz...",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: true,
+          serverURLs: "",
+        });
+      });
+    }
+    waitElementVisible('vcomments', loadValine);
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- LeanCloud 统计PV -->
+        <span id="leancloud-site-pv-container" style="display: none">
+            总访问量 
+            <span id="leancloud-site-pv"></span>
+             次
+          </span>
+      
+      
+        <!-- LeanCloud 统计UV -->
+        <span id="leancloud-site-uv-container" style="display: none">
+            总访客数 
+            <span id="leancloud-site-uv"></span>
+             人
+          </span>
+      
+
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/js/clipboard-use.js" ></script>
+
+
+
+  <script defer>
+  (function () {
+    // 查询存储的记录
+    function getRecord(Counter, target) {
+      return new Promise(function (resolve, reject) {
+        Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({target})))
+          .then(resp => resp.json())
+          .then(({results, code, error}) => {
+            if (code === 401) {
+              throw error;
+            }
+            if (results && results.length > 0) {
+              var record = results[0];
+              resolve(record);
+            } else {
+              Counter('post', '/classes/Counter', {target, time: 0})
+                .then(resp => resp.json())
+                .then((record, error) => {
+                  if (error) {
+                    throw error;
+                  }
+                  resolve(record);
+                }).catch(error => {
+                console.error('Failed to create', error);
+                reject(error);
+              });
+            }
+          }).catch((error) => {
+          console.error('LeanCloud Counter Error:', error);
+          reject(error);
+        });
+      })
+    }
+
+    // 发起自增请求
+    function increment(Counter, incrArr) {
+      return new Promise(function (resolve, reject) {
+        Counter('post', '/batch', {
+          "requests": incrArr
+        }).then((res) => {
+          res = res.json();
+          if (res.error) {
+            throw res.error;
+          }
+          resolve(res);
+        }).catch((error) => {
+          console.error('Failed to save visitor count', error);
+          reject(error);
+        });
+      });
+    }
+
+    // 构建自增请求体
+    function buildIncrement(objectId) {
+      return {
+        "method": "PUT",
+        "path": `/1.1/classes/Counter/${ objectId }`,
+        "body": {
+          "time": {
+            '__op': 'Increment',
+            'amount': 1
+          }
+        }
+      }
+    }
+
+    // 校验是否为有效的 UV
+    function validUV() {
+      var key = 'LeanCloud_UV_Flag';
+      var flag = localStorage.getItem(key);
+      if (flag) {
+        // 距离标记小于 24 小时则不计为 UV
+        if (new Date().getTime() - parseInt(flag) <= 86400000) {
+          return false;
+        }
+      }
+      localStorage.setItem(key, new Date().getTime().toString());
+      return true;
+    }
+
+    function addCount(Counter) {
+      var enableIncr = 'true' === 'true' && window.location.hostname !== 'localhost';
+      var getterArr = [];
+      var incrArr = [];
+
+      // 请求 PV 并自增
+      var pvCtn = document.querySelector('#leancloud-site-pv-container');
+      if (pvCtn || enableIncr) {
+        var pvGetter = getRecord(Counter, 'site-pv').then((record) => {
+          incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-pv');
+          if (ele) {
+            ele.innerText = record.time + 1;
+            if (pvCtn) {
+              pvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(pvGetter);
+      }
+
+      // 请求 UV 并自增
+      var uvCtn = document.querySelector('#leancloud-site-uv-container');
+      if (uvCtn || enableIncr) {
+        var uvGetter = getRecord(Counter, 'site-uv').then((record) => {
+          var vuv = validUV();
+          vuv && incrArr.push(buildIncrement(record.objectId))
+          var ele = document.querySelector('#leancloud-site-uv');
+          if (ele) {
+            ele.innerText = record.time + (vuv ? 1 : 0);
+            if (uvCtn) {
+              uvCtn.style.display = 'inline';
+            }
+          }
+        });
+        getterArr.push(uvGetter);
+      }
+
+      // 如果是文章，请求文章的浏览数，并自增
+      if ('true' === 'true') {
+        var viewCtn = document.querySelector('#leancloud-post-views-container');
+        if (viewCtn || enableIncr) {
+          var target = decodeURI('/2020/04/15/%E5%9F%BA%E4%BA%8Epython3%E7%9A%84opencv%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86%E6%95%99%E7%A8%8B/');
+          var viewGetter = getRecord(Counter, target).then((record) => {
+            incrArr.push(buildIncrement(record.objectId))
+            if (viewCtn) {
+              var ele = document.querySelector('#leancloud-post-views');
+              if (ele) {
+                ele.innerText = (record.time || 0) + 1;
+                viewCtn.style.display = 'inline';
+              }
+            }
+          });
+          getterArr.push(viewGetter);
+        }
+      }
+
+      // 如果启动计数自增，批量发起自增请求
+      if (enableIncr) {
+        Promise.all(getterArr).then(() => {
+          incrArr.length > 0 && increment(Counter, incrArr);
+        })
+      }
+    }
+
+    var app_id = 'eiB322SWcVUsFk4lolBUdDNu-gzGzoHsz'
+    var app_key = 'Jd6DKjFNo9aXSfVmRllU2G66'
+    var server_url = 'https://eib322sw.lc-cn-n1-shared.com'
+
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${ api_server }/1.1${ url }`, {
+          method,
+          headers: {
+            'X-LC-Id': app_id,
+            'X-LC-Key': app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+
+      addCount(Counter);
+    }
+
+    var api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${ app_id.slice(0, 8).toLowerCase() }.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(resp => resp.json())
+        .then(({api_server}) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "基于python3的opencv图像处理教程&nbsp;",
+      ],
+      cursorChar: "_",
+      typeSpeed: 70,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>
