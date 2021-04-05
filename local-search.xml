@@ -423,6 +423,31 @@
   
   
   <entry>
+    <title>windows基础</title>
+    <link href="/2020/03/07/windows%E5%9F%BA%E7%A1%80/"/>
+    <url>/2020/03/07/windows%E5%9F%BA%E7%A1%80/</url>
+    
+    <content type="html"><![CDATA[<h2 id="windows基础"><a href="#windows基础" class="headerlink" title="windows基础"></a>windows基础</h2><h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="windows基础-1"><a href="#windows基础-1" class="headerlink" title="windows基础"></a>windows基础</h2><ol><li><h4 id="杀毒软件"><a href="#杀毒软件" class="headerlink" title="杀毒软件"></a>杀毒软件</h4><ul><li>不要杀毒软件，除了火绒都是流氓，有商业需求安全性的可以使用付费的avast</li><li>垃圾清理，使用ccleaner</li><li>杀毒软件中的工具都有更好的替代（火绒拦截窗口？？？）</li></ul></li><li><h4 id="系统盘"><a href="#系统盘" class="headerlink" title="系统盘"></a>系统盘</h4><ul><li>磁盘分区（后续）</li><li>C盘少放东西</li><li>C盘至少上到100G</li></ul></li><li><h4 id="文件扩展名和隐藏文件"><a href="#文件扩展名和隐藏文件" class="headerlink" title="文件扩展名和隐藏文件"></a>文件扩展名和隐藏文件</h4><ul><li>务必打开文件扩展名</li><li>隐藏文件机制（藏东西）</li></ul></li><li><h4 id="文件路径和快捷方式"><a href="#文件路径和快捷方式" class="headerlink" title="文件路径和快捷方式"></a>文件路径和快捷方式</h4><ul><li>快捷方式删箭头</li></ul></li><li><h4 id="开始菜单"><a href="#开始菜单" class="headerlink" title="开始菜单"></a>开始菜单</h4><ul><li>都是快捷方式</li></ul></li><li><h4 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h4><ul><li>截图：win+shift+s</li><li>新建文件夹：右键+w+f</li><li>剪切板：win+v</li><li>计算器：win+r+calc</li></ul></li><li><h4 id="win10自带设置"><a href="#win10自带设置" class="headerlink" title="win10自带设置"></a>win10自带设置</h4></li><li><h4 id="安全排除项和桌面注意事项"><a href="#安全排除项和桌面注意事项" class="headerlink" title="安全排除项和桌面注意事项"></a>安全排除项和桌面注意事项</h4></li><li><h4 id="分盘和厂商内存"><a href="#分盘和厂商内存" class="headerlink" title="分盘和厂商内存"></a>分盘和厂商内存</h4></li><li><h4 id="剖析C盘"><a href="#剖析C盘" class="headerlink" title="剖析C盘"></a>剖析C盘</h4><ul><li>七个文件夹修改路径</li></ul></li><li><h4 id="环境变量、系统变量、用户变量"><a href="#环境变量、系统变量、用户变量" class="headerlink" title="环境变量、系统变量、用户变量"></a>环境变量、系统变量、用户变量</h4><ul><li>windows键的搜索功能</li><li>cmd的搜索功能</li><li>系统变量：c-windows-system32</li><li>系统变量</li></ul></li><li><h4 id="控制面板——另一个设置"><a href="#控制面板——另一个设置" class="headerlink" title="控制面板——另一个设置"></a>控制面板——另一个设置</h4></li><li><h4 id="文件夹的分布"><a href="#文件夹的分布" class="headerlink" title="文件夹的分布"></a>文件夹的分布</h4><ul><li>分盘（4个，尽量英文命名文件夹）<ol><li>C</li><li>D（40-50G）<ul><li>software装常用软件</li><li>tool放小工具</li></ul></li><li>E<ul><li>Project<ul><li>c</li><li>java</li><li>matlab</li><li>…………</li></ul></li><li>DevelopTools<ul><li>vs2019</li><li>idea</li><li>…………</li></ul></li></ul></li><li>F<ul><li>download（安装包……）</li><li>photo</li><li>document</li><li>others（Game……）</li></ul></li></ol></li></ul></li><li><h4 id="安装软件注意事项"><a href="#安装软件注意事项" class="headerlink" title="安装软件注意事项"></a>安装软件注意事项</h4><ul><li>官网下载</li><li>文件路径</li></ul></li><li><h4 id="软件设置和首选项"><a href="#软件设置和首选项" class="headerlink" title="软件设置和首选项"></a>软件设置和首选项</h4></li><li><h4 id="软件推荐"><a href="#软件推荐" class="headerlink" title="软件推荐"></a>软件推荐</h4><ul><li>杀毒    avast</li><li>输入法     Rime    搜狗（要关广告）   自带</li><li>视频播放器  potplay√</li><li>音乐          qq、网易……Spotify</li><li>压缩           bandzip</li><li>清理垃圾    ccleaner</li><li>浏览器       GoogleChrome</li><li>office</li></ul></li><li><h4 id="工具推荐"><a href="#工具推荐" class="headerlink" title="工具推荐"></a>工具推荐</h4><ul><li>卸载工具     geek</li><li>录频软件     Camtasia Studio</li><li>截图             Faststone Capture、Snipaste</li><li>远程软件      Teamviewer、AnyDesk、向日葵</li></ul></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>我的学习笔记</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>我的学习笔记</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2020/03/07/hello-world/"/>
     <url>/2020/03/07/hello-world/</url>
@@ -465,31 +490,6 @@
     <tags>
       
       <tag>程序设计课</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>windows基础</title>
-    <link href="/2020/03/07/windows%E5%9F%BA%E7%A1%80/"/>
-    <url>/2020/03/07/windows%E5%9F%BA%E7%A1%80/</url>
-    
-    <content type="html"><![CDATA[<h2 id="windows基础"><a href="#windows基础" class="headerlink" title="windows基础"></a>windows基础</h2><h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="windows基础-1"><a href="#windows基础-1" class="headerlink" title="windows基础"></a>windows基础</h2><ol><li><h4 id="杀毒软件"><a href="#杀毒软件" class="headerlink" title="杀毒软件"></a>杀毒软件</h4><ul><li>不要杀毒软件，除了火绒都是流氓，有商业需求安全性的可以使用付费的avast</li><li>垃圾清理，使用ccleaner</li><li>杀毒软件中的工具都有更好的替代（火绒拦截窗口？？？）</li></ul></li><li><h4 id="系统盘"><a href="#系统盘" class="headerlink" title="系统盘"></a>系统盘</h4><ul><li>磁盘分区（后续）</li><li>C盘少放东西</li><li>C盘至少上到100G</li></ul></li><li><h4 id="文件扩展名和隐藏文件"><a href="#文件扩展名和隐藏文件" class="headerlink" title="文件扩展名和隐藏文件"></a>文件扩展名和隐藏文件</h4><ul><li>务必打开文件扩展名</li><li>隐藏文件机制（藏东西）</li></ul></li><li><h4 id="文件路径和快捷方式"><a href="#文件路径和快捷方式" class="headerlink" title="文件路径和快捷方式"></a>文件路径和快捷方式</h4><ul><li>快捷方式删箭头</li></ul></li><li><h4 id="开始菜单"><a href="#开始菜单" class="headerlink" title="开始菜单"></a>开始菜单</h4><ul><li>都是快捷方式</li></ul></li><li><h4 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h4><ul><li>截图：win+shift+s</li><li>新建文件夹：右键+w+f</li><li>剪切板：win+v</li><li>计算器：win+r+calc</li></ul></li><li><h4 id="win10自带设置"><a href="#win10自带设置" class="headerlink" title="win10自带设置"></a>win10自带设置</h4></li><li><h4 id="安全排除项和桌面注意事项"><a href="#安全排除项和桌面注意事项" class="headerlink" title="安全排除项和桌面注意事项"></a>安全排除项和桌面注意事项</h4></li><li><h4 id="分盘和厂商内存"><a href="#分盘和厂商内存" class="headerlink" title="分盘和厂商内存"></a>分盘和厂商内存</h4></li><li><h4 id="剖析C盘"><a href="#剖析C盘" class="headerlink" title="剖析C盘"></a>剖析C盘</h4><ul><li>七个文件夹修改路径</li></ul></li><li><h4 id="环境变量、系统变量、用户变量"><a href="#环境变量、系统变量、用户变量" class="headerlink" title="环境变量、系统变量、用户变量"></a>环境变量、系统变量、用户变量</h4><ul><li>windows键的搜索功能</li><li>cmd的搜索功能</li><li>系统变量：c-windows-system32</li><li>系统变量</li></ul></li><li><h4 id="控制面板——另一个设置"><a href="#控制面板——另一个设置" class="headerlink" title="控制面板——另一个设置"></a>控制面板——另一个设置</h4></li><li><h4 id="文件夹的分布"><a href="#文件夹的分布" class="headerlink" title="文件夹的分布"></a>文件夹的分布</h4><ul><li>分盘（4个，尽量英文命名文件夹）<ol><li>C</li><li>D（40-50G）<ul><li>software装常用软件</li><li>tool放小工具</li></ul></li><li>E<ul><li>Project<ul><li>c</li><li>java</li><li>matlab</li><li>…………</li></ul></li><li>DevelopTools<ul><li>vs2019</li><li>idea</li><li>…………</li></ul></li></ul></li><li>F<ul><li>download（安装包……）</li><li>photo</li><li>document</li><li>others（Game……）</li></ul></li></ol></li></ul></li><li><h4 id="安装软件注意事项"><a href="#安装软件注意事项" class="headerlink" title="安装软件注意事项"></a>安装软件注意事项</h4><ul><li>官网下载</li><li>文件路径</li></ul></li><li><h4 id="软件设置和首选项"><a href="#软件设置和首选项" class="headerlink" title="软件设置和首选项"></a>软件设置和首选项</h4></li><li><h4 id="软件推荐"><a href="#软件推荐" class="headerlink" title="软件推荐"></a>软件推荐</h4><ul><li>杀毒    avast</li><li>输入法     Rime    搜狗（要关广告）   自带</li><li>视频播放器  potplay√</li><li>音乐          qq、网易……Spotify</li><li>压缩           bandzip</li><li>清理垃圾    ccleaner</li><li>浏览器       GoogleChrome</li><li>office</li></ul></li><li><h4 id="工具推荐"><a href="#工具推荐" class="headerlink" title="工具推荐"></a>工具推荐</h4><ul><li>卸载工具     geek</li><li>录频软件     Camtasia Studio</li><li>截图             Faststone Capture、Snipaste</li><li>远程软件      Teamviewer、AnyDesk、向日葵</li></ul></li></ol>]]></content>
-    
-    
-    <categories>
-      
-      <category>我的学习笔记</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>我的学习笔记</tag>
       
     </tags>
     
