@@ -249,7 +249,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：an hour ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
@@ -321,10 +321,13 @@ if __name__=='__main__':
 topos = &#123; <span class="hljs-string">'mytopo'</span>: ( <span class="hljs-keyword">lambda</span>: FatTreeTopo() ) &#125;</code></pre></div>
 
 <p>开启pox代码</p>
-<div class="hljs"><pre><code class="hljs stylus">./pox<span class="hljs-selector-class">.py</span> forwarding<span class="hljs-selector-class">.l2_learning</span> openflow<span class="hljs-selector-class">.spanning_tree</span> --no-flood --hold-down log<span class="hljs-selector-class">.level</span> --DEBUG samples<span class="hljs-selector-class">.pretty_log</span> openflow<span class="hljs-selector-class">.discovery</span>  messenger messenger<span class="hljs-selector-class">.log_service</span> messenger<span class="hljs-selector-class">.ajax_transport</span> openflow<span class="hljs-selector-class">.of_service</span> host_tracker openflow<span class="hljs-selector-class">.of_01</span> --address=<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span> --port=<span class="hljs-number">6634</span> py</code></pre></div>
+<p><code>./pox.py forwarding.l2_learning openflow.spanning_tree --no-flood --hold-down log.level --DEBUG samples.pretty_log openflow.discovery  messenger messenger.log_service messenger.ajax_transport openflow.of_service host_tracker openflow.of_01 --address=127.0.0.1 --port=6634 py</code></p>
+<div class="hljs"><pre><code class="hljs plain">
+</code></pre></div>
 
 <p>mininet开始生成拓扑</p>
-<div class="hljs"><pre><code class="hljs angelscript">sudo mn --custom FatTree.py --topo mytopo --controller=remote,ip=<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>,port=<span class="hljs-number">6634</span></code></pre></div>
+<p><code>sudo mn --custom FatTree.py --topo mytopo --controller=remote,ip=127.0.0.1,port=6634</code></p>
+
             </div>
             <hr>
             <div>
