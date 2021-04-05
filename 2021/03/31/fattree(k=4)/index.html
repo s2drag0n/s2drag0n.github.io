@@ -20,7 +20,7 @@
   <meta name="description" content="尽人事，听天命">
   <meta name="author" content="SZL">
   <meta name="keywords" content="">
-  <title>fattree(k=4)源码 - 我 走路带风</title>
+  <title>fattree(k=4)源码以及pox控制器的使用 - 我 走路带风</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      389 字
+      364 字
     </span>
   
 
@@ -245,16 +245,16 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">fattree(k=4)源码</h1>
+            <h1 style="display: none">fattree(k=4)源码以及pox控制器的使用</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：8 hours ago
+                  本文最后更新于：12 minutes ago
                 
               </p>
             
             <div class="markdown-body" id="post-body">
-              <div class="hljs"><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/python</span>
+              <div class="hljs"><pre><code class="hljs python"><span class="hljs-comment">#!/usr/bin/python3</span>
 
 <span class="hljs-keyword">from</span> mininet.topo <span class="hljs-keyword">import</span> Topo
 <span class="hljs-keyword">from</span> mininet.net <span class="hljs-keyword">import</span> Mininet
@@ -266,82 +266,65 @@
 <span class="hljs-keyword">from</span> mininet.node <span class="hljs-keyword">import</span> Controller,RemoteController,OVSController,OVSKernelSwitch,Host
 
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FatTreeTopo</span><span class="hljs-params">(Topo)</span>:</span>
-    	<span class="hljs-string">"FatTree(k=4)"</span>
-	<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,**opts )</span>:</span>
-		Topo.__init__( self, **opts )
-	        L1 = <span class="hljs-number">4</span>
-	        L2 = L1 * <span class="hljs-number">2</span> 
-	        L3 = L2
-	        c = []
-	        a = []
-	        e = []  
-		<span class="hljs-comment"># add core ovs  </span>
-	        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range( L1 ):
-	                sw = self.addSwitch( <span class="hljs-string">'c&#123;&#125;'</span>.format( i + <span class="hljs-number">1</span> ) , cls=OVSKernelSwitch)
-	                c.append( sw )
-	        <span class="hljs-comment"># add aggregation ovs</span>
-	        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range( L2 ):
-	                sw = self.addSwitch( <span class="hljs-string">'a&#123;&#125;'</span>.format( L1 +i + <span class="hljs-number">1</span> ) , cls=OVSKernelSwitch)
-	                a.append( sw )
-		<span class="hljs-comment"># add edge ovs</span>
-	        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range( L3 ):
-	                sw = self.addSwitch( <span class="hljs-string">'e&#123;&#125;'</span>.format( L1 +L2 + i + <span class="hljs-number">1</span> ) , cls=OVSKernelSwitch)
-	                e.append( sw )
-		<span class="hljs-comment"># add links between core and aggregation ovs</span>
-	        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range( L1 ):
-	                sw1 = c[i]
-	                <span class="hljs-keyword">for</span> sw2 <span class="hljs-keyword">in</span> a[i/<span class="hljs-number">2</span>::L1/<span class="hljs-number">2</span>]:                    
-	                        self.addLink( sw2, sw1, bw=<span class="hljs-number">10</span>, delay=<span class="hljs-string">'5ms'</span>, loss=<span class="hljs-number">0</span>, max_queue_size=<span class="hljs-number">1000</span>, use_htb=<span class="hljs-literal">True</span> )
-		<span class="hljs-comment"># add links between aggregation and edge ovs</span>
-	        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range( <span class="hljs-number">0</span>, L2, <span class="hljs-number">2</span> ):
-	                <span class="hljs-keyword">for</span> sw1 <span class="hljs-keyword">in</span> a[i:i+<span class="hljs-number">2</span>]:
-	                    <span class="hljs-keyword">for</span> sw2 <span class="hljs-keyword">in</span> e[i:i+<span class="hljs-number">2</span>]:
-	                        self.addLink( sw2, sw1, bw=<span class="hljs-number">10</span>, delay=<span class="hljs-string">'5ms'</span>, loss=<span class="hljs-number">0</span>, max_queue_size=<span class="hljs-number">1000</span>, use_htb=<span class="hljs-literal">True</span> )
-		<span class="hljs-comment">#add hosts and its links with edge ovs</span>
-	        count = <span class="hljs-number">1</span>
-	        <span class="hljs-keyword">for</span> sw1 <span class="hljs-keyword">in</span> e:
-	                <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">2</span>):
-	                    host = self.addHost( <span class="hljs-string">'h&#123;&#125;'</span>.format( count ), cpu=<span class="hljs-number">.5</span>/<span class="hljs-number">16</span>,cls=Host)
-	                    self.addLink( sw1, host, bw=<span class="hljs-number">10</span>, delay=<span class="hljs-string">'5ms'</span>, loss=<span class="hljs-number">0</span>, max_queue_size=<span class="hljs-number">1000</span>, use_htb=<span class="hljs-literal">True</span> )
-                    	    count += <span class="hljs-number">1</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__init__</span><span class="hljs-params">(self,**opts )</span>:</span>
+        Topo.__init__( self, **opts )
+        L1 = <span class="hljs-number">4</span>
+        L2 = L1 * <span class="hljs-number">2</span> 
+        L3 = L2
+        c = []
+        a = []
+        e = []  
+	    <span class="hljs-comment"># add core ovs  </span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range( L1 ):
+        	sw = self.addSwitch( <span class="hljs-string">'c&#123;&#125;'</span>.format( i + <span class="hljs-number">1</span> ) , cls=OVSKernelSwitch)
+        	c.append( sw )
+        <span class="hljs-comment"># add aggregation ovs</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range( L2 ):
+        	sw = self.addSwitch( <span class="hljs-string">'a&#123;&#125;'</span>.format( L1 +i + <span class="hljs-number">1</span> ) , cls=OVSKernelSwitch)
+        	a.append( sw )
+	    <span class="hljs-comment"># add edge ovs</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range( L3 ):
+            sw = self.addSwitch( <span class="hljs-string">'e&#123;&#125;'</span>.format( L1 +L2 + i + <span class="hljs-number">1</span> ) , cls=OVSKernelSwitch)
+            e.append( sw )
+	    <span class="hljs-comment"># add links between core and aggregation ovs</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range( L1 ):
+            sw1 = c[i]
+            <span class="hljs-keyword">for</span> sw2 <span class="hljs-keyword">in</span> a[i//<span class="hljs-number">2</span>::L1//<span class="hljs-number">2</span>]:                    
+            	self.addLink( sw2, sw1, bw=<span class="hljs-number">10</span>, delay=<span class="hljs-string">'5ms'</span>, loss=<span class="hljs-number">0</span>, max_queue_size=<span class="hljs-number">1000</span>, use_htb=<span class="hljs-literal">True</span> )
+	    <span class="hljs-comment"># add links between aggregation and edge ovs</span>
+        <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range( <span class="hljs-number">0</span>, L2, <span class="hljs-number">2</span> ):
+            <span class="hljs-keyword">for</span> sw1 <span class="hljs-keyword">in</span> a[i:i+<span class="hljs-number">2</span>]:
+                <span class="hljs-keyword">for</span> sw2 <span class="hljs-keyword">in</span> e[i:i+<span class="hljs-number">2</span>]:
+                    self.addLink( sw2, sw1, bw=<span class="hljs-number">10</span>, delay=<span class="hljs-string">'5ms'</span>, loss=<span class="hljs-number">0</span>, max_queue_size=<span class="hljs-number">1000</span>, use_htb=<span class="hljs-literal">True</span> )
+	    <span class="hljs-comment">#add hosts and its links with edge ovs</span>
+        count = <span class="hljs-number">1</span>
+        <span class="hljs-keyword">for</span> sw1 <span class="hljs-keyword">in</span> e:
+            <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(<span class="hljs-number">2</span>):
+                host = self.addHost( <span class="hljs-string">'h&#123;&#125;'</span>.format( count ), cpu=<span class="hljs-number">.5</span>/<span class="hljs-number">16</span>,cls=Host)
+                self.addLink( sw1, host, bw=<span class="hljs-number">10</span>, delay=<span class="hljs-string">'5ms'</span>, loss=<span class="hljs-number">0</span>, max_queue_size=<span class="hljs-number">1000</span>, use_htb=<span class="hljs-literal">True</span> )
+                count+=<span class="hljs-number">1</span>
 
-	
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">Test</span><span class="hljs-params">()</span>:</span>
-    <span class="hljs-string">"Create network and run simple performance test"</span>
+<span class="hljs-string">'''
+def Test():
+    "Create network and run simple performance test"
     topo = FatTreeTopo()
-    net = Mininet(topo=topo,host=CPULimitedHost, link=TCLink,autoStaticArp=<span class="hljs-literal">False</span>)
-
-    c0=net.addController(name=<span class="hljs-string">"c0"</span>,controller=RemoteController,ip=<span class="hljs-string">'127.0.0.1'</span>,protocol=<span class="hljs-string">'tcp'</span>,port=<span class="hljs-number">6636</span>)
+    net = Mininet(topo=topo,host=CPULimitedHost, link=TCLink)
     net.start()
-    <span class="hljs-keyword">for</span> controller <span class="hljs-keyword">in</span> net.controllers:
-	controller.start()
-    
-  
-
-    <span class="hljs-keyword">print</span> <span class="hljs-string">"Dumping host connections"</span>
-    dumpNodeConnections(net.hosts)
-
-    <span class="hljs-keyword">print</span> <span class="hljs-string">"(2) let h1 ping h16 for 10 times"</span>
-	
-    <span class="hljs-keyword">print</span> <span class="hljs-string">"(3) let each pair of host ping each other with pingall"</span>
-    <span class="hljs-comment">#net.pingAll()</span>
-
-    <span class="hljs-keyword">print</span> <span class="hljs-string">"(4) test bandwidth with iperf"</span>
-    <span class="hljs-comment">#h1, h4 = net.get('h1', 'h4')</span>
-    <span class="hljs-comment">#net.iperf((h1, h4))</span>
-    <span class="hljs-comment">#h1, h16 = net.get('h1', 'h16')</span>
-    <span class="hljs-comment">#net.iperf((h1, h16))</span>
-    <span class="hljs-comment">#h1, h8 = net.get('h1', 'h8')</span>
-    <span class="hljs-comment">#net.iperf((h1, h8))</span>
-
     CLI(net)
     net.stop()
 
-<span class="hljs-keyword">if</span> __name__==<span class="hljs-string">'__main__'</span>:
-    setLogLevel(<span class="hljs-string">'info'</span>)
-    Test()</code></pre></div>
 
+if __name__=='__main__':
+    setLogLevel('info')
+    Test()
+'''</span>
+topos = &#123; <span class="hljs-string">'mytopo'</span>: ( <span class="hljs-keyword">lambda</span>: FatTreeTopo() ) &#125;</code></pre></div>
 
+<p>开启pox代码</p>
+<div class="hljs"><pre><code class="hljs stylus">./pox<span class="hljs-selector-class">.py</span> forwarding<span class="hljs-selector-class">.l2_learning</span> openflow<span class="hljs-selector-class">.spanning_tree</span> --no-flood --hold-down log<span class="hljs-selector-class">.level</span> --DEBUG samples<span class="hljs-selector-class">.pretty_log</span> openflow<span class="hljs-selector-class">.discovery</span>  messenger messenger<span class="hljs-selector-class">.log_service</span> messenger<span class="hljs-selector-class">.ajax_transport</span> openflow<span class="hljs-selector-class">.of_service</span> host_tracker openflow<span class="hljs-selector-class">.of_01</span> --address=<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span> --port=<span class="hljs-number">6634</span> py</code></pre></div>
+
+<p>mininet开始生成拓扑</p>
+<div class="hljs"><pre><code class="hljs angelscript">sudo mn --custom FatTree.py --topo mytopo --controller=remote,ip=<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>,port=<span class="hljs-number">6634</span></code></pre></div>
             </div>
             <hr>
             <div>
@@ -723,7 +706,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "fattree(k=4)源码&nbsp;",
+        "fattree(k=4)源码以及pox控制器的使用&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
