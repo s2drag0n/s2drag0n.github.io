@@ -323,31 +323,6 @@
     
     
     <entry>
-      <title>编译原理随笔</title>
-      <link href="/2020/03/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E9%9A%8F%E7%AC%94/"/>
-      <url>/2020/03/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E9%9A%8F%E7%AC%94/</url>
-      
-        <content type="html"><![CDATA[<h2 id="自动机理论"><a href="#自动机理论" class="headerlink" title="自动机理论"></a>自动机理论</h2><h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><blockquote><p>[TOC]</p></blockquote><h2 id="第一章-自动机"><a href="#第一章-自动机" class="headerlink" title="第一章    自动机"></a>第一章    自动机</h2><h4 id="1、为什么研究自动机理论"><a href="#1、为什么研究自动机理论" class="headerlink" title="1、为什么研究自动机理论"></a>1、为什么研究自动机理论</h4><ol><li>有穷自动机简介</li><li>结构表示法<ul><li>两种重要记号<ul><li>文法</li><li>正则表达式</li></ul></li></ul></li><li>自动机与复杂性</li></ol><h4 id="2、形式化证明简介"><a href="#2、形式化证明简介" class="headerlink" title="2、形式化证明简介"></a>2、形式化证明简介</h4><ol><li>演绎证明</li><li>求助于定义</li><li>其他定理形式</li><li>表面上不是“如果-则”命题的定理</li></ol><h4 id="3、其他证明形式"><a href="#3、其他证明形式" class="headerlink" title="3、其他证明形式"></a>3、其他证明形式</h4><ol><li>证明集合等价性</li><li>逆否命题</li><li>反证法</li><li>反例</li></ol><h4 id="4、归纳证明"><a href="#4、归纳证明" class="headerlink" title="4、归纳证明"></a>4、归纳证明</h4><ol><li>整数上归纳法</li><li>一般形式整数归纳法</li><li>结构归纳法</li><li>互归纳法</li></ol><p>5、自动机理论中心概念</p><ol><li>字母表<ul><li>是符号的有穷非空集合，用∑表示</li></ul></li><li>串<ul><li>从字母表中选择的符号的有穷序列</li><li>空串ε</li><li>串的长度–符号位数</li><li>字母表的幂<ul><li>∑^k^表示在字母表∑上的长度为k的串</li><li>∑^*^表示在字母表∑上的所有串</li><li>∑^+^表示在字母表∑上的非空串集合</li></ul></li><li>串的连接</li></ul></li><li>语言<ul><li>从∑^*^上选出的串的某个集合L</li><li>集合表示法可以作为定义语言的方式</li></ul></li><li>问题<ul><li>给定串w，判断是否属于语言L</li></ul></li></ol><h4 id="6、小结"><a href="#6、小结" class="headerlink" title="6、小结"></a>6、小结</h4><ul><li></li></ul><hr><h2 id="第二章-有穷自动机"><a href="#第二章-有穷自动机" class="headerlink" title="第二章    有穷自动机"></a>第二章    有穷自动机</h2><h4 id="1、有穷自动机的非形式化描述"><a href="#1、有穷自动机的非形式化描述" class="headerlink" title="1、有穷自动机的非形式化描述"></a>1、有穷自动机的非形式化描述</h4><ol><li>基本规则</li><li>协议</li><li>允许自动机忽略动作<ul><li>两类必须忽略动作<ul><li>与各方无关的动作</li><li>导致自动机死亡的动作</li></ul></li></ul></li><li>整个系统成为一个自动机</li><li>用乘积自动机验证协议</li></ol><h4 id="2、确定型有穷自动机"><a href="#2、确定型有穷自动机" class="headerlink" title="2、确定型有穷自动机"></a>2、确定型有穷自动机</h4><ol><li>确定型有穷自动机的形式化定义<ul><li>一个有穷的状态集合Q</li><li>一个有穷的输入符号集合∑</li><li>一个转移函数δ</li><li>一个初始状态q<del>0</del>，Q中之一</li><li>一个接收状态集合F，Q的子集</li><li>五元组定义为（Q，∑，δ，q<del>0</del>，F）</li></ul></li><li>DFA如何处理串</li><li>DFA的简化记号<ul><li>转移图</li><li>转移表</li></ul></li><li>把转移函数扩展到串<ul><li>使用扩展转移函数</li></ul></li><li>DFA的语言<ul><li>让初始状态q<del>0</del>通向接受状态之一的串w的集合</li></ul></li></ol><h4 id="3、非确定的有穷自动机"><a href="#3、非确定的有穷自动机" class="headerlink" title="3、非确定的有穷自动机"></a>3、非确定的有穷自动机</h4><ol><li>其非形式化观点<ul><li>区别在于NFA的转移函数可能返回不止一个状态</li><li>死亡情况可忽略</li><li>NFA转移表每一项都是一个状态的集合或者空集合</li></ul></li><li>定义<ul><li>一个有穷的状态集合Q</li><li>一个有穷的输入符号集合∑</li><li>一个转移函数δ</li><li>一个初始状态q<del>0</del>，Q中之一</li><li>一个接收状态集合F，Q的子集</li><li>五元组定义为（Q，∑，δ，q<del>0</del>，F）</li></ul></li><li>扩展转移函数</li><li>NFA的语言<ul><li>让初始状态q<del>0</del>至少有一条路径通向接受状态之一的串w的集合</li></ul></li><li>确定型与非确定型有穷自动机的等价性<ul><li>子集构造：说明如何形式化用一个自动机的状态和转移来描述另一个自动机</li></ul></li><li>子集构造的坏情况</li></ol><h4 id="4、应用：文本搜索"><a href="#4、应用：文本搜索" class="headerlink" title="4、应用：文本搜索"></a>4、应用：文本搜索</h4><ol><li>在文本中查找串  </li><li>文本搜索的非确定型有穷自动机</li><li>识别关键字集合的DFA</li></ol><h4 id="5、带ε转移的有穷自动机"><a href="#5、带ε转移的有穷自动机" class="headerlink" title="5、带ε转移的有穷自动机"></a>5、带ε转移的有穷自动机</h4><ol><li>ε转移的用途</li><li>ε-NFA的形式化定义</li><li>ε闭包</li><li>ε-NFA的扩展转移和语言</li><li>消除ε转移</li></ol><h4 id="6、小结-1"><a href="#6、小结-1" class="headerlink" title="6、小结"></a>6、小结</h4><hr><h2 id="第三章-词法分析"><a href="#第三章-词法分析" class="headerlink" title="第三章    词法分析"></a>第三章    词法分析</h2><h4 id="1、正则表达式（RE）"><a href="#1、正则表达式（RE）" class="headerlink" title="1、正则表达式（RE）"></a>1、正则表达式（RE）</h4><ul><li>是一种用来描述正则语言的更紧凑的表达方式</li><li>每个正则表达式r定义一个语言L（r）</li><li>递归定义：<ul><li>空串ε是一个RE，L（ε）= { ε }；</li><li>如果a属于∑，则a是一个RE，L（a）= { a }；</li><li>假设r和s都是RE则 <ul><li>r | s是一个RE，L（r | s）=两语言并集</li><li>rs是一个RE，两语言乘积</li><li>r^*^是一个RE，语言的克林闭包</li><li>（r）是一个RE，原语言</li></ul></li></ul></li><li>正则语言：可以用RE定义的语言，也叫正则集合</li><li>正则文法与正则表达式的等价</li></ul><h4 id="2、正则定义"><a href="#2、正则定义" class="headerlink" title="2、正则定义"></a>2、正则定义</h4><ul><li>如下形式<ul><li>d<del>i</del>   代表某个RE  r<del>i</del></li><li>每个   d<del>i</del>   都是一个新符号</li><li>每个   r<del>i</del>   是   ∑   并上   {d<del>i</del>}   上的正则表达式</li></ul></li></ul><h4 id="3、有穷自动机"><a href="#3、有穷自动机" class="headerlink" title="3、有穷自动机"></a>3、有穷自动机</h4><ul><li>最长子串匹配原则</li><li>DFA<ul><li>（S，∑，δ，s<del>0</del>，F）</li><li>δ：S×∑→S</li></ul></li><li>NFA<ul><li>（S，∑，δ，s0，F）</li><li>δ：S×∑→2^S^</li></ul></li><li>带有ε-边的NFA<ul><li>（S，∑，δ，s0，F）</li><li>δ：S×（  ∑并{ε}  ）→2^S^</li></ul></li><li>两种自动机的等价性</li><li>带不带ε-边的等价性</li></ul><h4 id="4、从正则表达式到有穷自动机"><a href="#4、从正则表达式到有穷自动机" class="headerlink" title="4、从正则表达式到有穷自动机"></a>4、从正则表达式到有穷自动机</h4><ul><li>根据RE构造NFA<ul><li>并联、串联、克林闭包</li></ul></li></ul><h4 id="5、从NFA到DFA的转换"><a href="#5、从NFA到DFA的转换" class="headerlink" title="5、从NFA到DFA的转换"></a>5、从NFA到DFA的转换</h4><ul><li>NFA    转换表    DFA</li><li>子集构造法</li></ul><h4 id="6、识别单词的DFA"><a href="#6、识别单词的DFA" class="headerlink" title="6、识别单词的DFA"></a>6、识别单词的DFA</h4><ul><li>标识符</li><li>无符号数</li><li>注释</li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> 我的学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 我的学习笔记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>不考虑价值的简单背包问题</title>
       <link href="/2020/03/07/%E8%83%8C%E5%8C%85/"/>
       <url>/2020/03/07/%E8%83%8C%E5%8C%85/</url>
@@ -365,6 +340,31 @@
         <tags>
             
             <tag> 程序设计课 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>编译原理随笔</title>
+      <link href="/2020/03/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E9%9A%8F%E7%AC%94/"/>
+      <url>/2020/03/07/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E9%9A%8F%E7%AC%94/</url>
+      
+        <content type="html"><![CDATA[<h2 id="自动机理论"><a href="#自动机理论" class="headerlink" title="自动机理论"></a>自动机理论</h2><h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><blockquote><p>[TOC]</p></blockquote><h2 id="第一章-自动机"><a href="#第一章-自动机" class="headerlink" title="第一章    自动机"></a>第一章    自动机</h2><h4 id="1、为什么研究自动机理论"><a href="#1、为什么研究自动机理论" class="headerlink" title="1、为什么研究自动机理论"></a>1、为什么研究自动机理论</h4><ol><li>有穷自动机简介</li><li>结构表示法<ul><li>两种重要记号<ul><li>文法</li><li>正则表达式</li></ul></li></ul></li><li>自动机与复杂性</li></ol><h4 id="2、形式化证明简介"><a href="#2、形式化证明简介" class="headerlink" title="2、形式化证明简介"></a>2、形式化证明简介</h4><ol><li>演绎证明</li><li>求助于定义</li><li>其他定理形式</li><li>表面上不是“如果-则”命题的定理</li></ol><h4 id="3、其他证明形式"><a href="#3、其他证明形式" class="headerlink" title="3、其他证明形式"></a>3、其他证明形式</h4><ol><li>证明集合等价性</li><li>逆否命题</li><li>反证法</li><li>反例</li></ol><h4 id="4、归纳证明"><a href="#4、归纳证明" class="headerlink" title="4、归纳证明"></a>4、归纳证明</h4><ol><li>整数上归纳法</li><li>一般形式整数归纳法</li><li>结构归纳法</li><li>互归纳法</li></ol><p>5、自动机理论中心概念</p><ol><li>字母表<ul><li>是符号的有穷非空集合，用∑表示</li></ul></li><li>串<ul><li>从字母表中选择的符号的有穷序列</li><li>空串ε</li><li>串的长度–符号位数</li><li>字母表的幂<ul><li>∑^k^表示在字母表∑上的长度为k的串</li><li>∑^*^表示在字母表∑上的所有串</li><li>∑^+^表示在字母表∑上的非空串集合</li></ul></li><li>串的连接</li></ul></li><li>语言<ul><li>从∑^*^上选出的串的某个集合L</li><li>集合表示法可以作为定义语言的方式</li></ul></li><li>问题<ul><li>给定串w，判断是否属于语言L</li></ul></li></ol><h4 id="6、小结"><a href="#6、小结" class="headerlink" title="6、小结"></a>6、小结</h4><ul><li></li></ul><hr><h2 id="第二章-有穷自动机"><a href="#第二章-有穷自动机" class="headerlink" title="第二章    有穷自动机"></a>第二章    有穷自动机</h2><h4 id="1、有穷自动机的非形式化描述"><a href="#1、有穷自动机的非形式化描述" class="headerlink" title="1、有穷自动机的非形式化描述"></a>1、有穷自动机的非形式化描述</h4><ol><li>基本规则</li><li>协议</li><li>允许自动机忽略动作<ul><li>两类必须忽略动作<ul><li>与各方无关的动作</li><li>导致自动机死亡的动作</li></ul></li></ul></li><li>整个系统成为一个自动机</li><li>用乘积自动机验证协议</li></ol><h4 id="2、确定型有穷自动机"><a href="#2、确定型有穷自动机" class="headerlink" title="2、确定型有穷自动机"></a>2、确定型有穷自动机</h4><ol><li>确定型有穷自动机的形式化定义<ul><li>一个有穷的状态集合Q</li><li>一个有穷的输入符号集合∑</li><li>一个转移函数δ</li><li>一个初始状态q<del>0</del>，Q中之一</li><li>一个接收状态集合F，Q的子集</li><li>五元组定义为（Q，∑，δ，q<del>0</del>，F）</li></ul></li><li>DFA如何处理串</li><li>DFA的简化记号<ul><li>转移图</li><li>转移表</li></ul></li><li>把转移函数扩展到串<ul><li>使用扩展转移函数</li></ul></li><li>DFA的语言<ul><li>让初始状态q<del>0</del>通向接受状态之一的串w的集合</li></ul></li></ol><h4 id="3、非确定的有穷自动机"><a href="#3、非确定的有穷自动机" class="headerlink" title="3、非确定的有穷自动机"></a>3、非确定的有穷自动机</h4><ol><li>其非形式化观点<ul><li>区别在于NFA的转移函数可能返回不止一个状态</li><li>死亡情况可忽略</li><li>NFA转移表每一项都是一个状态的集合或者空集合</li></ul></li><li>定义<ul><li>一个有穷的状态集合Q</li><li>一个有穷的输入符号集合∑</li><li>一个转移函数δ</li><li>一个初始状态q<del>0</del>，Q中之一</li><li>一个接收状态集合F，Q的子集</li><li>五元组定义为（Q，∑，δ，q<del>0</del>，F）</li></ul></li><li>扩展转移函数</li><li>NFA的语言<ul><li>让初始状态q<del>0</del>至少有一条路径通向接受状态之一的串w的集合</li></ul></li><li>确定型与非确定型有穷自动机的等价性<ul><li>子集构造：说明如何形式化用一个自动机的状态和转移来描述另一个自动机</li></ul></li><li>子集构造的坏情况</li></ol><h4 id="4、应用：文本搜索"><a href="#4、应用：文本搜索" class="headerlink" title="4、应用：文本搜索"></a>4、应用：文本搜索</h4><ol><li>在文本中查找串  </li><li>文本搜索的非确定型有穷自动机</li><li>识别关键字集合的DFA</li></ol><h4 id="5、带ε转移的有穷自动机"><a href="#5、带ε转移的有穷自动机" class="headerlink" title="5、带ε转移的有穷自动机"></a>5、带ε转移的有穷自动机</h4><ol><li>ε转移的用途</li><li>ε-NFA的形式化定义</li><li>ε闭包</li><li>ε-NFA的扩展转移和语言</li><li>消除ε转移</li></ol><h4 id="6、小结-1"><a href="#6、小结-1" class="headerlink" title="6、小结"></a>6、小结</h4><hr><h2 id="第三章-词法分析"><a href="#第三章-词法分析" class="headerlink" title="第三章    词法分析"></a>第三章    词法分析</h2><h4 id="1、正则表达式（RE）"><a href="#1、正则表达式（RE）" class="headerlink" title="1、正则表达式（RE）"></a>1、正则表达式（RE）</h4><ul><li>是一种用来描述正则语言的更紧凑的表达方式</li><li>每个正则表达式r定义一个语言L（r）</li><li>递归定义：<ul><li>空串ε是一个RE，L（ε）= { ε }；</li><li>如果a属于∑，则a是一个RE，L（a）= { a }；</li><li>假设r和s都是RE则 <ul><li>r | s是一个RE，L（r | s）=两语言并集</li><li>rs是一个RE，两语言乘积</li><li>r^*^是一个RE，语言的克林闭包</li><li>（r）是一个RE，原语言</li></ul></li></ul></li><li>正则语言：可以用RE定义的语言，也叫正则集合</li><li>正则文法与正则表达式的等价</li></ul><h4 id="2、正则定义"><a href="#2、正则定义" class="headerlink" title="2、正则定义"></a>2、正则定义</h4><ul><li>如下形式<ul><li>d<del>i</del>   代表某个RE  r<del>i</del></li><li>每个   d<del>i</del>   都是一个新符号</li><li>每个   r<del>i</del>   是   ∑   并上   {d<del>i</del>}   上的正则表达式</li></ul></li></ul><h4 id="3、有穷自动机"><a href="#3、有穷自动机" class="headerlink" title="3、有穷自动机"></a>3、有穷自动机</h4><ul><li>最长子串匹配原则</li><li>DFA<ul><li>（S，∑，δ，s<del>0</del>，F）</li><li>δ：S×∑→S</li></ul></li><li>NFA<ul><li>（S，∑，δ，s0，F）</li><li>δ：S×∑→2^S^</li></ul></li><li>带有ε-边的NFA<ul><li>（S，∑，δ，s0，F）</li><li>δ：S×（  ∑并{ε}  ）→2^S^</li></ul></li><li>两种自动机的等价性</li><li>带不带ε-边的等价性</li></ul><h4 id="4、从正则表达式到有穷自动机"><a href="#4、从正则表达式到有穷自动机" class="headerlink" title="4、从正则表达式到有穷自动机"></a>4、从正则表达式到有穷自动机</h4><ul><li>根据RE构造NFA<ul><li>并联、串联、克林闭包</li></ul></li></ul><h4 id="5、从NFA到DFA的转换"><a href="#5、从NFA到DFA的转换" class="headerlink" title="5、从NFA到DFA的转换"></a>5、从NFA到DFA的转换</h4><ul><li>NFA    转换表    DFA</li><li>子集构造法</li></ul><h4 id="6、识别单词的DFA"><a href="#6、识别单词的DFA" class="headerlink" title="6、识别单词的DFA"></a>6、识别单词的DFA</h4><ul><li>标识符</li><li>无符号数</li><li>注释</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 我的学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 我的学习笔记 </tag>
             
         </tags>
       
@@ -423,31 +423,6 @@
     
     
     <entry>
-      <title>windows基础</title>
-      <link href="/2020/03/07/windows%E5%9F%BA%E7%A1%80/"/>
-      <url>/2020/03/07/windows%E5%9F%BA%E7%A1%80/</url>
-      
-        <content type="html"><![CDATA[<h2 id="windows基础"><a href="#windows基础" class="headerlink" title="windows基础"></a>windows基础</h2><h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="windows基础-1"><a href="#windows基础-1" class="headerlink" title="windows基础"></a>windows基础</h2><ol><li><h4 id="杀毒软件"><a href="#杀毒软件" class="headerlink" title="杀毒软件"></a>杀毒软件</h4><ul><li>不要杀毒软件，除了火绒都是流氓，有商业需求安全性的可以使用付费的avast</li><li>垃圾清理，使用ccleaner</li><li>杀毒软件中的工具都有更好的替代（火绒拦截窗口？？？）</li></ul></li><li><h4 id="系统盘"><a href="#系统盘" class="headerlink" title="系统盘"></a>系统盘</h4><ul><li>磁盘分区（后续）</li><li>C盘少放东西</li><li>C盘至少上到100G</li></ul></li><li><h4 id="文件扩展名和隐藏文件"><a href="#文件扩展名和隐藏文件" class="headerlink" title="文件扩展名和隐藏文件"></a>文件扩展名和隐藏文件</h4><ul><li>务必打开文件扩展名</li><li>隐藏文件机制（藏东西）</li></ul></li><li><h4 id="文件路径和快捷方式"><a href="#文件路径和快捷方式" class="headerlink" title="文件路径和快捷方式"></a>文件路径和快捷方式</h4><ul><li>快捷方式删箭头</li></ul></li><li><h4 id="开始菜单"><a href="#开始菜单" class="headerlink" title="开始菜单"></a>开始菜单</h4><ul><li>都是快捷方式</li></ul></li><li><h4 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h4><ul><li>截图：win+shift+s</li><li>新建文件夹：右键+w+f</li><li>剪切板：win+v</li><li>计算器：win+r+calc</li></ul></li><li><h4 id="win10自带设置"><a href="#win10自带设置" class="headerlink" title="win10自带设置"></a>win10自带设置</h4></li><li><h4 id="安全排除项和桌面注意事项"><a href="#安全排除项和桌面注意事项" class="headerlink" title="安全排除项和桌面注意事项"></a>安全排除项和桌面注意事项</h4></li><li><h4 id="分盘和厂商内存"><a href="#分盘和厂商内存" class="headerlink" title="分盘和厂商内存"></a>分盘和厂商内存</h4></li><li><h4 id="剖析C盘"><a href="#剖析C盘" class="headerlink" title="剖析C盘"></a>剖析C盘</h4><ul><li>七个文件夹修改路径</li></ul></li><li><h4 id="环境变量、系统变量、用户变量"><a href="#环境变量、系统变量、用户变量" class="headerlink" title="环境变量、系统变量、用户变量"></a>环境变量、系统变量、用户变量</h4><ul><li>windows键的搜索功能</li><li>cmd的搜索功能</li><li>系统变量：c-windows-system32</li><li>系统变量</li></ul></li><li><h4 id="控制面板——另一个设置"><a href="#控制面板——另一个设置" class="headerlink" title="控制面板——另一个设置"></a>控制面板——另一个设置</h4></li><li><h4 id="文件夹的分布"><a href="#文件夹的分布" class="headerlink" title="文件夹的分布"></a>文件夹的分布</h4><ul><li>分盘（4个，尽量英文命名文件夹）<ol><li>C</li><li>D（40-50G）<ul><li>software装常用软件</li><li>tool放小工具</li></ul></li><li>E<ul><li>Project<ul><li>c</li><li>java</li><li>matlab</li><li>…………</li></ul></li><li>DevelopTools<ul><li>vs2019</li><li>idea</li><li>…………</li></ul></li></ul></li><li>F<ul><li>download（安装包……）</li><li>photo</li><li>document</li><li>others（Game……）</li></ul></li></ol></li></ul></li><li><h4 id="安装软件注意事项"><a href="#安装软件注意事项" class="headerlink" title="安装软件注意事项"></a>安装软件注意事项</h4><ul><li>官网下载</li><li>文件路径</li></ul></li><li><h4 id="软件设置和首选项"><a href="#软件设置和首选项" class="headerlink" title="软件设置和首选项"></a>软件设置和首选项</h4></li><li><h4 id="软件推荐"><a href="#软件推荐" class="headerlink" title="软件推荐"></a>软件推荐</h4><ul><li>杀毒    avast</li><li>输入法     Rime    搜狗（要关广告）   自带</li><li>视频播放器  potplay√</li><li>音乐          qq、网易……Spotify</li><li>压缩           bandzip</li><li>清理垃圾    ccleaner</li><li>浏览器       GoogleChrome</li><li>office</li></ul></li><li><h4 id="工具推荐"><a href="#工具推荐" class="headerlink" title="工具推荐"></a>工具推荐</h4><ul><li>卸载工具     geek</li><li>录频软件     Camtasia Studio</li><li>截图             Faststone Capture、Snipaste</li><li>远程软件      Teamviewer、AnyDesk、向日葵</li></ul></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> 我的学习笔记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 我的学习笔记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hello World</title>
       <link href="/2020/03/07/hello-world/"/>
       <url>/2020/03/07/hello-world/</url>
@@ -465,6 +440,31 @@
         <tags>
             
             <tag> HelloWorld </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>windows基础</title>
+      <link href="/2020/03/07/windows%E5%9F%BA%E7%A1%80/"/>
+      <url>/2020/03/07/windows%E5%9F%BA%E7%A1%80/</url>
+      
+        <content type="html"><![CDATA[<h2 id="windows基础"><a href="#windows基础" class="headerlink" title="windows基础"></a>windows基础</h2><h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><h2 id="windows基础-1"><a href="#windows基础-1" class="headerlink" title="windows基础"></a>windows基础</h2><ol><li><h4 id="杀毒软件"><a href="#杀毒软件" class="headerlink" title="杀毒软件"></a>杀毒软件</h4><ul><li>不要杀毒软件，除了火绒都是流氓，有商业需求安全性的可以使用付费的avast</li><li>垃圾清理，使用ccleaner</li><li>杀毒软件中的工具都有更好的替代（火绒拦截窗口？？？）</li></ul></li><li><h4 id="系统盘"><a href="#系统盘" class="headerlink" title="系统盘"></a>系统盘</h4><ul><li>磁盘分区（后续）</li><li>C盘少放东西</li><li>C盘至少上到100G</li></ul></li><li><h4 id="文件扩展名和隐藏文件"><a href="#文件扩展名和隐藏文件" class="headerlink" title="文件扩展名和隐藏文件"></a>文件扩展名和隐藏文件</h4><ul><li>务必打开文件扩展名</li><li>隐藏文件机制（藏东西）</li></ul></li><li><h4 id="文件路径和快捷方式"><a href="#文件路径和快捷方式" class="headerlink" title="文件路径和快捷方式"></a>文件路径和快捷方式</h4><ul><li>快捷方式删箭头</li></ul></li><li><h4 id="开始菜单"><a href="#开始菜单" class="headerlink" title="开始菜单"></a>开始菜单</h4><ul><li>都是快捷方式</li></ul></li><li><h4 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h4><ul><li>截图：win+shift+s</li><li>新建文件夹：右键+w+f</li><li>剪切板：win+v</li><li>计算器：win+r+calc</li></ul></li><li><h4 id="win10自带设置"><a href="#win10自带设置" class="headerlink" title="win10自带设置"></a>win10自带设置</h4></li><li><h4 id="安全排除项和桌面注意事项"><a href="#安全排除项和桌面注意事项" class="headerlink" title="安全排除项和桌面注意事项"></a>安全排除项和桌面注意事项</h4></li><li><h4 id="分盘和厂商内存"><a href="#分盘和厂商内存" class="headerlink" title="分盘和厂商内存"></a>分盘和厂商内存</h4></li><li><h4 id="剖析C盘"><a href="#剖析C盘" class="headerlink" title="剖析C盘"></a>剖析C盘</h4><ul><li>七个文件夹修改路径</li></ul></li><li><h4 id="环境变量、系统变量、用户变量"><a href="#环境变量、系统变量、用户变量" class="headerlink" title="环境变量、系统变量、用户变量"></a>环境变量、系统变量、用户变量</h4><ul><li>windows键的搜索功能</li><li>cmd的搜索功能</li><li>系统变量：c-windows-system32</li><li>系统变量</li></ul></li><li><h4 id="控制面板——另一个设置"><a href="#控制面板——另一个设置" class="headerlink" title="控制面板——另一个设置"></a>控制面板——另一个设置</h4></li><li><h4 id="文件夹的分布"><a href="#文件夹的分布" class="headerlink" title="文件夹的分布"></a>文件夹的分布</h4><ul><li>分盘（4个，尽量英文命名文件夹）<ol><li>C</li><li>D（40-50G）<ul><li>software装常用软件</li><li>tool放小工具</li></ul></li><li>E<ul><li>Project<ul><li>c</li><li>java</li><li>matlab</li><li>…………</li></ul></li><li>DevelopTools<ul><li>vs2019</li><li>idea</li><li>…………</li></ul></li></ul></li><li>F<ul><li>download（安装包……）</li><li>photo</li><li>document</li><li>others（Game……）</li></ul></li></ol></li></ul></li><li><h4 id="安装软件注意事项"><a href="#安装软件注意事项" class="headerlink" title="安装软件注意事项"></a>安装软件注意事项</h4><ul><li>官网下载</li><li>文件路径</li></ul></li><li><h4 id="软件设置和首选项"><a href="#软件设置和首选项" class="headerlink" title="软件设置和首选项"></a>软件设置和首选项</h4></li><li><h4 id="软件推荐"><a href="#软件推荐" class="headerlink" title="软件推荐"></a>软件推荐</h4><ul><li>杀毒    avast</li><li>输入法     Rime    搜狗（要关广告）   自带</li><li>视频播放器  potplay√</li><li>音乐          qq、网易……Spotify</li><li>压缩           bandzip</li><li>清理垃圾    ccleaner</li><li>浏览器       GoogleChrome</li><li>office</li></ul></li><li><h4 id="工具推荐"><a href="#工具推荐" class="headerlink" title="工具推荐"></a>工具推荐</h4><ul><li>卸载工具     geek</li><li>录频软件     Camtasia Studio</li><li>截图             Faststone Capture、Snipaste</li><li>远程软件      Teamviewer、AnyDesk、向日葵</li></ul></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 我的学习笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 我的学习笔记 </tag>
             
         </tags>
       
