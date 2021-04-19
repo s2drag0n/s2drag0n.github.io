@@ -167,7 +167,7 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('/img/top2.jpg') no-repeat center center;
+         style="background: url('/img/post/g++.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -251,7 +251,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：3 minutes ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
@@ -267,13 +267,13 @@
 &#125;</code></pre></div>
 
 <p>在不涉及继承和派生的概念时，可以设计同名不同参数的函数实现<strong><code>重载</code></strong>功能，例如设计三个打印函数分别打印整型、浮点型或者字符型，此时会根据给定的参数选择正确的函数执行，这个过程由编译器完成，叫做<strong><code>静态联编</code></strong> 。</p>
-<div class="hljs"><pre><code class="hljs cpp"><span class="hljs-keyword">void</span> print（<span class="hljs-keyword">int</span> i）&#123;
+<div class="hljs"><pre><code class="hljs c++"><span class="hljs-keyword">void</span> <span class="hljs-built_in">print</span>（<span class="hljs-keyword">int</span> i）&#123;
      <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"整型"</span>&lt;&lt;i&lt;&lt;<span class="hljs-built_in">endl</span>;
 &#125;
-<span class="hljs-keyword">void</span> print（<span class="hljs-keyword">float</span> i）&#123;
+<span class="hljs-keyword">void</span> <span class="hljs-built_in">print</span>（<span class="hljs-keyword">float</span> i）&#123;
      <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"浮点型"</span>&lt;&lt;i&lt;&lt;<span class="hljs-built_in">endl</span>;
 &#125;
-<span class="hljs-keyword">void</span> print（<span class="hljs-keyword">char</span> i）&#123;
+<span class="hljs-keyword">void</span> <span class="hljs-built_in">print</span>（<span class="hljs-keyword">char</span> i）&#123;
      <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"字符型"</span>&lt;&lt;i&lt;&lt;<span class="hljs-built_in">endl</span>;
 &#125;</code></pre></div>
 
@@ -335,7 +335,7 @@ p2-&gt;ViewAcct(parameter <span class="hljs-built_in">list</span>);<span class="
                     
                       <a href="/2021/03/31/fattree(k=4)/">
                         <span class="hidden-mobile">fattree(k=4)源码以及pox控制器的使用</span>
-                        <span class="visible-mobile">Next</span>
+                        <span class="visible-mobile">次の記事</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -403,7 +403,7 @@ p2-&gt;ViewAcct(parameter <span class="hljs-built_in">list</span>);<span class="
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">検索</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -412,7 +412,7 @@ p2-&gt;ViewAcct(parameter <span class="hljs-built_in">list</span>);<span class="
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
           <label data-error="x" data-success="v"
-                 for="local-search-input">keyword</label>
+                 for="local-search-input">キーワード</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
