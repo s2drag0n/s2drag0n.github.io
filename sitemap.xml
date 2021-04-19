@@ -200,13 +200,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%BE/</loc>
-    <lastmod>2021-04-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/tags/Python/</loc>
     <lastmod>2021-04-19</lastmod>
     <changefreq>daily</changefreq>
@@ -214,7 +207,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/404/</loc>
+    <loc>http://yoursite.com/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%BE/</loc>
     <lastmod>2021-04-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -222,6 +215,13 @@
   
   <url>
     <loc>http://yoursite.com/tags/%E6%9D%82%E9%A1%B9/</loc>
+    <lastmod>2021-04-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/404/</loc>
     <lastmod>2021-04-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -272,13 +272,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%BE/</loc>
-    <lastmod>2021-04-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/categories/Python/</loc>
     <lastmod>2021-04-19</lastmod>
     <changefreq>daily</changefreq>
@@ -286,7 +279,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/404/</loc>
+    <loc>http://yoursite.com/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E8%AF%BE/</loc>
     <lastmod>2021-04-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -294,6 +287,13 @@
   
   <url>
     <loc>http://yoursite.com/categories/%E6%9D%82%E9%A1%B9/</loc>
+    <lastmod>2021-04-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/404/</loc>
     <lastmod>2021-04-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
