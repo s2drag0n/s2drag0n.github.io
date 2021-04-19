@@ -22,7 +22,7 @@
   <meta name="description" content="尽人事，听天命">
   <meta name="author" content="SZL">
   <meta name="keywords" content="">
-  <title>c++编译报错消息详解（遇到一个更一个） - 我 走路带风</title>
+  <title>c++报错消息详解（更新中） - 我 走路带风</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      549 字
+      525 字
     </span>
   
 
@@ -247,7 +247,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">c++编译报错消息详解（遇到一个更一个）</h1>
+            <h1 style="display: none">c++报错消息详解（更新中）</h1>
             
               <p class="note note-info">
                 
@@ -256,8 +256,7 @@
               </p>
             
             <div class="markdown-body" id="post-body">
-              <p>title:c++报错消息详解（更新中）<br>categories: c++<br>index_img: /img/post/g++.png<br>banner_img: /img/post/g++.png<br>tags: g++，c++</p>
-<ol>
+              <ol>
 <li><h3 id="error-invalid-covariant-return-type-for（非法的协变返回类型）"><a href="#error-invalid-covariant-return-type-for（非法的协变返回类型）" class="headerlink" title="error: invalid covariant return type for（非法的协变返回类型）"></a>error: invalid covariant return type for（非法的协变返回类型）</h3><p><img src="https://myblogpic-1259595840.cos.ap-hongkong.myqcloud.com/img/image-20210418235057483.png" srcset="/img/loading.gif" alt="image-20210418235057483"></p>
 <p>c++允许在派生类中定义和基类同名的函数，比如BrassPlus类由Brass类派生而来，则可定义以下两个同名函数</p>
 <div class="hljs"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">virtual</span> returntype <span class="hljs-title">Brass::ViewAcct</span><span class="hljs-params">(parameter <span class="hljs-built_in">list</span>)</span></span>&#123;
@@ -293,7 +292,7 @@ p2-&gt;ViewAcct(parameter <span class="hljs-built_in">list</span>);<span class="
 <ol>
 <li><p>参数必须完全一致，否则将会隐藏同名的基类方法，试图调用此基类方法的行为是非法的。</p>
 </li>
-<li><p>其次返回类型也要完全一致，但只有一种情况例外——如果返回类型是基类引用或指针，则可以修改为指向派生类的引用或指针。这种特性被称为<code>**返回类型协变**</code>。</p>
+<li><p>其次返回类型也要完全一致，但只有一种情况例外——如果返回类型是基类引用或指针，则可以修改为指向派生类的引用或指针。这种特性被称为<strong><code>返回类型协变</code></strong>。</p>
 </li>
 </ol>
 </blockquote>
@@ -306,6 +305,20 @@ p2-&gt;ViewAcct(parameter <span class="hljs-built_in">list</span>);<span class="
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/c/">c++</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/c/">c++</a>
+                    
+                  </div>
                 
               </div>
               
@@ -668,7 +681,7 @@ p2-&gt;ViewAcct(parameter <span class="hljs-built_in">list</span>);<span class="
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "c++编译报错消息详解（遇到一个更一个）&nbsp;",
+        "c++报错消息详解（更新中）&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
